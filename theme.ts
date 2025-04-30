@@ -51,10 +51,10 @@ const theme = extendTheme({
                 solid: (props: any) => {
                     if (props.colorScheme === 'brand') {
                         return {
-                            bg: props.colorMode === 'dark' ? 'brand.300' : 'brand.500',
+                            bg: props.colorMode === 'dark' ? 'brand.500' : 'brand.400',
                             color: 'white',
                             _hover: {
-                                bg: props.colorMode === 'dark' ? 'brand.200' : 'brand.600',
+                                bg: props.colorMode === 'dark' ? 'brand.400' : 'brand.500',
                             },
                             _active: {
                                 bg: props.colorMode === 'dark' ? 'brand.100' : 'brand.700',

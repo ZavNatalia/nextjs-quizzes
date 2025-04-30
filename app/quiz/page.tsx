@@ -1,11 +1,12 @@
+import React from 'react'
 import { quizzes } from '@/data/quizzes'
 import NextLink from 'next/link'
-import { Box, Heading, Link } from '@chakra-ui/react'
+import { Box, Container, Heading, Link } from '@chakra-ui/react'
 
 export default function QuizIndexPage() {
     return (
-        <Box p={6}>
-            <Heading size="lg" mb={4}>Выбери тест:</Heading>
+        <Container maxW="4xl" py={10} flexGrow={1} px={8}>
+        <Heading size="lg" mb={4}>Выбери тест:</Heading>
             {quizzes.map(({ slug, title }) => (
                 <Box key={slug} mb={2}>
                     <Link as={NextLink} href={`/quiz/${slug}`} color="primary">
@@ -13,6 +14,6 @@ export default function QuizIndexPage() {
                     </Link>
                 </Box>
             ))}
-        </Box>
+        </Container>
     )
 }

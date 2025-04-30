@@ -1,8 +1,52 @@
-# Default ignored files
+# Node
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js
+.next/
+out/
+.cache/
+.vercel/
+dist/
+
+# Env & config
+.env
+.env.local
+.env.*.local
+.env.test
+.env.development
+.env.production
+
+# IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+
+# Build artifacts
+*.log
+*.tsbuildinfo
+
+# Optional lockfiles
+yarn.lock
+package-lock.json
+
+# JetBrains
+/.idea/
 /shelf/
 /workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+# HTTP client (JetBrains)
+httpRequests/

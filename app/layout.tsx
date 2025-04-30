@@ -4,7 +4,8 @@ import "./globals.css";
 import { Providers } from '@/app/providers';
 import React from 'react';
 import HeaderNav from '@/components/HeaderNav';
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
+import Footer from '@/components/Footer';
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -28,14 +29,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
             <Flex direction="column" minHeight="100vh" alignItems="center" mx="auto">
                 <HeaderNav />
-                <Box maxW="4xl" w="full" px={6} py={4} flexGrow={1} bg="bg">
                     {children}
-                </Box>
-                <footer style={{width: '100%'}}>
-                    <Box bg="subtleBg" w="full" textAlign="center" py={2}>
-                        <Text fontSize="sm">footer</Text>
-                    </Box>
-                </footer>
+                <Footer/>
             </Flex>
         </Providers>
         </body>
