@@ -10,9 +10,9 @@ export const quiz = {
                     { label: 'Только useEffect', value: 'onlyEffect' },
                     { label: 'Да', value: 'yes' },
                     { label: 'Только в классовом компоненте', value: 'classOnly' },
-                    { label: 'Нет', value: 'no' }
+                    { label: 'Нет', value: 'no' },
                 ],
-                correctAnswer: 'no'
+                correctAnswer: 'no',
             },
             {
                 name: 'q2',
@@ -21,9 +21,9 @@ export const quiz = {
                     { label: 'Кеширует вычисления', value: 'memo' },
                     { label: 'Создает состояние', value: 'state' },
                     { label: 'Рендерит DOM', value: 'render' },
-                    { label: 'Обрабатывает события', value: 'event' }
+                    { label: 'Обрабатывает события', value: 'event' },
                 ],
-                correctAnswer: 'memo'
+                correctAnswer: 'memo',
             },
             {
                 name: 'q3',
@@ -32,9 +32,9 @@ export const quiz = {
                     { label: 'Проверяет потенциальные ошибки', value: 'strict' },
                     { label: 'Оптимизирует сборку', value: 'optimize' },
                     { label: 'Запускает сервер', value: 'server' },
-                    { label: 'Включает строгую типизацию', value: 'types' }
+                    { label: 'Включает строгую типизацию', value: 'types' },
                 ],
-                correctAnswer: 'strict'
+                correctAnswer: 'strict',
             },
             {
                 name: 'q4',
@@ -43,9 +43,9 @@ export const quiz = {
                     { label: '<Component>props</Component>', value: 'child' },
                     { label: '<Component />', value: 'element' },
                     { label: '{Component}', value: 'value' },
-                    { label: '() => <Component />', value: 'fn' }
+                    { label: '() => <Component />', value: 'fn' },
                 ],
-                correctAnswer: 'fn'
+                correctAnswer: 'fn',
             },
             {
                 name: 'q5',
@@ -54,10 +54,10 @@ export const quiz = {
                     { label: 'Сработает useEffect', value: 'effect' },
                     { label: 'Ререндер не произойдёт', value: 'noRender' },
                     { label: 'Компонент ререндерится', value: 'render' },
-                    { label: 'Сбросится DOM', value: 'reset' }
+                    { label: 'Сбросится DOM', value: 'reset' },
                 ],
-                correctAnswer: 'noRender'
-            }
+                correctAnswer: 'noRender',
+            },
         ],
         middle: [
             {
@@ -67,9 +67,9 @@ export const quiz = {
                     { label: 'Будет новая функция на каждый рендер', value: 'new' },
                     { label: 'Функция не будет вызвана', value: 'none' },
                     { label: 'useCallback не работает без deps', value: 'error' },
-                    { label: 'Функция кешируется навсегда', value: 'cache' }
+                    { label: 'Функция кешируется навсегда', value: 'cache' },
                 ],
-                correctAnswer: 'new'
+                correctAnswer: 'new',
             },
             {
                 name: 'q2',
@@ -78,9 +78,9 @@ export const quiz = {
                     { label: 'useCallback', value: 'callback' },
                     { label: 'useMemo', value: 'memo' },
                     { label: 'useState', value: 'state' },
-                    { label: 'useEffect', value: 'effect' }
+                    { label: 'useEffect', value: 'effect' },
                 ],
-                correctAnswer: 'effect'
+                correctAnswer: 'effect',
             },
             {
                 name: 'q3',
@@ -89,9 +89,9 @@ export const quiz = {
                     { label: 'Для кэширования', value: 'cache' },
                     { label: 'Для оптимизации повторного рендера', value: 'opt' },
                     { label: 'Для идентификации компонентов', value: 'identify' },
-                    { label: 'Для уникальности id', value: 'id' }
+                    { label: 'Для уникальности id', value: 'id' },
                 ],
-                correctAnswer: 'opt'
+                correctAnswer: 'opt',
             },
             {
                 name: 'q4',
@@ -100,9 +100,9 @@ export const quiz = {
                     { label: 'Хранит мутабельную ссылку между рендерами', value: 'ref' },
                     { label: 'Вызывает функцию при рендере', value: 'call' },
                     { label: 'Следит за состоянием', value: 'state' },
-                    { label: 'Создает новый DOM-элемент', value: 'dom' }
+                    { label: 'Создает новый DOM-элемент', value: 'dom' },
                 ],
-                correctAnswer: 'ref'
+                correctAnswer: 'ref',
             },
             {
                 name: 'q5',
@@ -111,10 +111,10 @@ export const quiz = {
                     { label: 'Работает как useEffect', value: 'effect' },
                     { label: 'Ошибка: бесконечный цикл', value: 'loop' },
                     { label: 'Ничего', value: 'none' },
-                    { label: 'Вызовется один раз', value: 'once' }
+                    { label: 'Вызовется один раз', value: 'once' },
                 ],
-                correctAnswer: 'loop'
-            }
+                correctAnswer: 'loop',
+            },
         ],
         senior: [
             {
@@ -124,9 +124,9 @@ export const quiz = {
                     { label: 'Для SSR', value: 'ssr' },
                     { label: 'Для улучшения accessibility', value: 'a11y' },
                     { label: 'Для ленивой подгрузки компонентов', value: 'lazy' },
-                    { label: 'Для SEO', value: 'seo' }
+                    { label: 'Для SEO', value: 'seo' },
                 ],
-                correctAnswer: 'lazy'
+                correctAnswer: 'lazy',
             },
             {
                 name: 'q2',
@@ -135,9 +135,9 @@ export const quiz = {
                     { label: 'Создает memoized ref', value: 'memo' },
                     { label: 'Управляет фокусом', value: 'focus' },
                     { label: 'Пробрасывает ref в дочерний компонент', value: 'pass' },
-                    { label: 'Оборачивает хук', value: 'hook' }
+                    { label: 'Оборачивает хук', value: 'hook' },
                 ],
-                correctAnswer: 'pass'
+                correctAnswer: 'pass',
             },
             {
                 name: 'q3',
@@ -146,9 +146,9 @@ export const quiz = {
                     { label: 'Для запросов к API', value: 'api' },
                     { label: 'Всегда быстрее', value: 'fast' },
                     { label: 'Для мутаций состояния', value: 'mutate' },
-                    { label: 'Для синхронных изменений DOM перед отрисовкой', value: 'layout' }
+                    { label: 'Для синхронных изменений DOM перед отрисовкой', value: 'layout' },
                 ],
-                correctAnswer: 'layout'
+                correctAnswer: 'layout',
             },
             {
                 name: 'q4',
@@ -157,9 +157,9 @@ export const quiz = {
                     { label: 'Массив из состояния и dispatch', value: 'tuple' },
                     { label: 'Только dispatch', value: 'dispatch' },
                     { label: 'Функцию рендера', value: 'render' },
-                    { label: 'Компонент', value: 'component' }
+                    { label: 'Компонент', value: 'component' },
                 ],
-                correctAnswer: 'tuple'
+                correctAnswer: 'tuple',
             },
             {
                 name: 'q5',
@@ -167,11 +167,14 @@ export const quiz = {
                 options: [
                     { label: 'Заменяет useState', value: 'state' },
                     { label: 'Является middleware', value: 'middleware' },
-                    { label: 'Передает данные напрямую между любыми компонентами', value: 'context' },
-                    { label: 'Обрабатывает события', value: 'event' }
+                    {
+                        label: 'Передает данные напрямую между любыми компонентами',
+                        value: 'context',
+                    },
+                    { label: 'Обрабатывает события', value: 'event' },
                 ],
-                correctAnswer: 'context'
-            }
-        ]
-    }
-}
+                correctAnswer: 'context',
+            },
+        ],
+    },
+};

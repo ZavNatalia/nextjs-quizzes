@@ -10,20 +10,21 @@ export const quiz = {
                     { label: '<div>', value: 'div' },
                     { label: '<main>', value: 'main' },
                     { label: '<body>', value: 'body' },
-                    { label: '<section>', value: 'section' }
+                    { label: '<section>', value: 'section' },
                 ],
-                correctAnswer: 'main'
+                correctAnswer: 'main',
             },
             {
                 name: 'q2',
-                question: 'Какой атрибут используется для доступности (a11y), чтобы описать элемент?',
+                question:
+                    'Какой атрибут используется для доступности (a11y), чтобы описать элемент?',
                 options: [
                     { label: 'title', value: 'title' },
                     { label: 'aria-label', value: 'aria-label' },
                     { label: 'tooltip', value: 'tooltip' },
-                    { label: 'alt', value: 'alt' }
+                    { label: 'alt', value: 'alt' },
                 ],
-                correctAnswer: 'aria-label'
+                correctAnswer: 'aria-label',
             },
             {
                 name: 'q3',
@@ -32,9 +33,9 @@ export const quiz = {
                     { label: 'Проверяет email', value: 'validate' },
                     { label: 'Включает автозаполнение полей', value: 'on' },
                     { label: 'Очищает форму', value: 'reset' },
-                    { label: 'Добавляет подсказки', value: 'hint' }
+                    { label: 'Добавляет подсказки', value: 'hint' },
                 ],
-                correctAnswer: 'on'
+                correctAnswer: 'on',
             },
             {
                 name: 'q4',
@@ -43,9 +44,9 @@ export const quiz = {
                     { label: 'Только в HTML5.2', value: 'html52' },
                     { label: 'Да', value: 'yes' },
                     { label: 'Нет', value: 'no' },
-                    { label: 'Зависит от браузера', value: 'browser' }
+                    { label: 'Зависит от браузера', value: 'browser' },
                 ],
-                correctAnswer: 'yes'
+                correctAnswer: 'yes',
             },
             {
                 name: 'q5',
@@ -54,10 +55,10 @@ export const quiz = {
                     { label: '<canvas>', value: 'canvas' },
                     { label: '<vector>', value: 'vector' },
                     { label: '<svg>', value: 'svg' },
-                    { label: '<image>', value: 'image' }
+                    { label: '<image>', value: 'image' },
                 ],
-                correctAnswer: 'svg'
-            }
+                correctAnswer: 'svg',
+            },
         ],
         middle: [
             {
@@ -67,31 +68,33 @@ export const quiz = {
                     { label: 'target', value: 'target' },
                     { label: 'enctype', value: 'enctype' },
                     { label: 'action', value: 'action' },
-                    { label: 'method', value: 'method' }
+                    { label: 'method', value: 'method' },
                 ],
-                correctAnswer: 'action'
+                correctAnswer: 'action',
             },
             {
                 name: 'q7',
-                question: 'Какой тег используется для группировки логически связанных элементов формы?',
+                question:
+                    'Какой тег используется для группировки логически связанных элементов формы?',
                 options: [
                     { label: '<formgroup>', value: 'formgroup' },
                     { label: '<labelset>', value: 'labelset' },
                     { label: '<section>', value: 'section' },
-                    { label: '<fieldset>', value: 'fieldset' }
+                    { label: '<fieldset>', value: 'fieldset' },
                 ],
-                correctAnswer: 'fieldset'
+                correctAnswer: 'fieldset',
             },
             {
                 name: 'q8',
-                question: 'Какой элемент помогает браузеру адаптировать страницу под размер экрана?',
+                question:
+                    'Какой элемент помогает браузеру адаптировать страницу под размер экрана?',
                 options: [
                     { label: '<meta name="viewport">', value: 'viewport' },
                     { label: '<meta charset="utf-8">', value: 'charset' },
                     { label: '<responsive>', value: 'responsive' },
-                    { label: '<device>', value: 'device' }
+                    { label: '<device>', value: 'device' },
                 ],
-                correctAnswer: 'viewport'
+                correctAnswer: 'viewport',
             },
             {
                 name: 'q9',
@@ -100,9 +103,9 @@ export const quiz = {
                     { label: 'required', value: 'required' },
                     { label: 'validate', value: 'validate' },
                     { label: 'check', value: 'check' },
-                    { label: 'empty', value: 'empty' }
+                    { label: 'empty', value: 'empty' },
                 ],
-                correctAnswer: 'required'
+                correctAnswer: 'required',
             },
             {
                 name: 'q10',
@@ -111,10 +114,10 @@ export const quiz = {
                     { label: 'Добавляет форму', value: 'form' },
                     { label: 'Показывает модалку', value: 'modal' },
                     { label: 'Хранит скрытую разметку, не отображаемую сразу', value: 'hidden' },
-                    { label: 'Определяет внешний шаблон', value: 'external' }
+                    { label: 'Определяет внешний шаблон', value: 'external' },
                 ],
-                correctAnswer: 'hidden'
-            }
+                correctAnswer: 'hidden',
+            },
         ],
         senior: [
             {
@@ -124,9 +127,9 @@ export const quiz = {
                     { label: 'Будет ошибка', value: 'error' },
                     { label: 'Он будет отправлять форму', value: 'submit' },
                     { label: 'Ничего', value: 'nothing' },
-                    { label: 'Он будет сбрасывать форму', value: 'reset' }
+                    { label: 'Он будет сбрасывать форму', value: 'reset' },
                 ],
-                correctAnswer: 'submit'
+                correctAnswer: 'submit',
             },
             {
                 name: 'q12',
@@ -135,9 +138,9 @@ export const quiz = {
                     { label: 'aria-label', value: 'aria' },
                     { label: 'accesskey', value: 'accesskey' },
                     { label: 'tabindex', value: 'tabindex' },
-                    { label: 'shortcut', value: 'shortcut' }
+                    { label: 'shortcut', value: 'shortcut' },
                 ],
-                correctAnswer: 'tabindex'
+                correctAnswer: 'tabindex',
             },
             {
                 name: 'q13',
@@ -146,20 +149,21 @@ export const quiz = {
                     { label: '<meta name="description">', value: 'meta' },
                     { label: '<title>', value: 'title' },
                     { label: '<h1>', value: 'h1' },
-                    { label: '<link rel="stylesheet">', value: 'link' }
+                    { label: '<link rel="stylesheet">', value: 'link' },
                 ],
-                correctAnswer: 'link'
+                correctAnswer: 'link',
             },
             {
                 name: 'q14',
-                question: 'Какая ошибка в HTML ухудшает доступность для пользователей с нарушениями зрения?',
+                question:
+                    'Какая ошибка в HTML ухудшает доступность для пользователей с нарушениями зрения?',
                 options: [
                     { label: 'Отсутствие class', value: 'class' },
                     { label: 'Добавление tabindex всем элементам', value: 'tabindex' },
                     { label: 'Отсутствие alt у изображений', value: 'alt' },
-                    { label: 'Использование <main> вместо <div>', value: 'main' }
+                    { label: 'Использование <main> вместо <div>', value: 'main' },
                 ],
-                correctAnswer: 'alt'
+                correctAnswer: 'alt',
             },
             {
                 name: 'q15',
@@ -168,10 +172,10 @@ export const quiz = {
                     { label: 'Да, но не рекомендуется', value: 'yes' },
                     { label: 'Да, по стандарту', value: 'ok' },
                     { label: 'Нет', value: 'no' },
-                    { label: 'Только внутри iframe', value: 'iframe' }
+                    { label: 'Только внутри iframe', value: 'iframe' },
                 ],
-                correctAnswer: 'yes'
-            }
-        ]
-    }
-}
+                correctAnswer: 'yes',
+            },
+        ],
+    },
+};

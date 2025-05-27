@@ -1,9 +1,9 @@
-import { extendTheme, type ThemeConfig } from '@chakra-ui/react'
+import { extendTheme, type ThemeConfig } from '@chakra-ui/react';
 
 const config: ThemeConfig = {
     initialColorMode: 'system',
     useSystemColorMode: true,
-}
+};
 
 const theme = extendTheme({
     config,
@@ -14,7 +14,7 @@ const theme = extendTheme({
             200: '#81b8ff',
             300: '#4e9cff',
             400: '#1c80ff',
-            500: '#0066e0',     // основной акцент
+            500: '#0066e0', // основной акцент
             600: '#004fb0',
             700: '#003880',
             800: '#002250',
@@ -59,12 +59,12 @@ const theme = extendTheme({
                             _active: {
                                 bg: props.colorMode === 'dark' ? 'brand.100' : 'brand.700',
                             },
-                        }
+                        };
                     }
                 },
             },
         },
     },
-})
+});
 
-export default theme
+export default theme;

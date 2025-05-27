@@ -1,8 +1,8 @@
-'use client'
+'use client';
 import React from 'react';
-import { Box, Button, Container, Grid, Heading, Text, VStack } from '@chakra-ui/react'
-import NextLink from 'next/link'
-import { quizzes } from '@/data/quizzes'
+import { Box, Button, Container, Grid, Heading, Text, VStack } from '@chakra-ui/react';
+import NextLink from 'next/link';
+import { quizzes } from '@/data/quizzes';
 
 export default function HomePage() {
     return (
@@ -14,12 +14,7 @@ export default function HomePage() {
                 <Text fontSize="lg" color="text">
                     Интерактивные тесты по JavaScript, HTML, CSS, React, TypeScript и другим темам
                 </Text>
-                <Button
-                    as={NextLink}
-                    href="/quiz"
-                    colorScheme="brand"
-                    size="lg"
-                >
+                <Button as={NextLink} href="/quiz" colorScheme="brand" size="lg">
                     Перейти к тестам
                 </Button>
 
@@ -37,8 +32,8 @@ export default function HomePage() {
                             p={5}
                             borderRadius="md"
                             boxShadow="sm"
-                            transition='ease'
-                            transitionDuration='0.3s'
+                            transition="ease"
+                            transitionDuration="0.3s"
                             _hover={{ boxShadow: 'md', bg: 'gray.200', _dark: { bg: 'gray.600' } }}
                         >
                             <Text fontWeight="semibold">{title}</Text>
@@ -47,5 +42,5 @@ export default function HomePage() {
                 </Grid>
             </VStack>
         </Container>
-    )
+    );
 }

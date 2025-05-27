@@ -5,25 +5,27 @@ export const quiz = {
         junior: [
             {
                 name: 'q1',
-                question: 'Какой каталог используется в Next.js 14 для маршрутов и серверных компонентов?',
+                question:
+                    'Какой каталог используется в Next.js 14 для маршрутов и серверных компонентов?',
                 options: [
                     { label: '/pages', value: 'pages' },
                     { label: '/routes', value: 'routes' },
                     { label: '/src', value: 'src' },
-                    { label: '/app', value: 'app' }
+                    { label: '/app', value: 'app' },
                 ],
-                correctAnswer: 'app'
+                correctAnswer: 'app',
             },
             {
                 name: 'q2',
-                question: 'Что необходимо добавить в начало файла, чтобы компонент стал клиентским?',
+                question:
+                    'Что необходимо добавить в начало файла, чтобы компонент стал клиентским?',
                 options: [
                     { label: "'use client'", value: 'use-client' },
                     { label: "'client-only'", value: 'client-only' },
                     { label: "export const dynamic = 'force-dynamic'", value: 'dynamic' },
-                    { label: "import React from 'react'", value: 'import-react' }
+                    { label: "import React from 'react'", value: 'import-react' },
                 ],
-                correctAnswer: 'use-client'
+                correctAnswer: 'use-client',
             },
             {
                 name: 'q3',
@@ -32,9 +34,9 @@ export const quiz = {
                     { label: '<a>', value: 'a' },
                     { label: 'useRouter', value: 'useRouter' },
                     { label: "Link из 'next/link'", value: 'link' },
-                    { label: 'RouterLink', value: 'routerlink' }
+                    { label: 'RouterLink', value: 'routerlink' },
                 ],
-                correctAnswer: 'link'
+                correctAnswer: 'link',
             },
             {
                 name: 'q4',
@@ -43,9 +45,9 @@ export const quiz = {
                     { label: 'useLocation', value: 'useLocation' },
                     { label: 'usePathname', value: 'usePathname' },
                     { label: 'useRoute', value: 'useRoute' },
-                    { label: 'useHref', value: 'useHref' }
+                    { label: 'useHref', value: 'useHref' },
                 ],
-                correctAnswer: 'usePathname'
+                correctAnswer: 'usePathname',
             },
             {
                 name: 'q5',
@@ -54,10 +56,10 @@ export const quiz = {
                     { label: 'error.tsx', value: 'error' },
                     { label: 'not-found.tsx', value: 'not-found' },
                     { label: 'layout.tsx', value: 'layout' },
-                    { label: 'middleware.ts', value: 'middleware' }
+                    { label: 'middleware.ts', value: 'middleware' },
                 ],
-                correctAnswer: 'error'
-            }
+                correctAnswer: 'error',
+            },
         ],
         middle: [
             {
@@ -67,9 +69,9 @@ export const quiz = {
                     { label: 'generateStaticParams', value: 'generateStaticParams' },
                     { label: 'getStaticPaths', value: 'getStaticPaths' },
                     { label: 'useEffect', value: 'useEffect' },
-                    { label: 'getPaths', value: 'getPaths' }
+                    { label: 'getPaths', value: 'getPaths' },
                 ],
-                correctAnswer: 'generateStaticParams'
+                correctAnswer: 'generateStaticParams',
             },
             {
                 name: 'q7',
@@ -78,9 +80,9 @@ export const quiz = {
                     { label: 'export const revalidate = 60', value: 'revalidate' },
                     { label: 'useRevalidate()', value: 'hook' },
                     { label: "export const dynamic = 'auto'", value: 'dynamic' },
-                    { label: 'getServerSideProps', value: 'gssp' }
+                    { label: 'getServerSideProps', value: 'gssp' },
                 ],
-                correctAnswer: 'revalidate'
+                correctAnswer: 'revalidate',
             },
             {
                 name: 'q8',
@@ -89,20 +91,21 @@ export const quiz = {
                     { label: "fetch() в компоненте без 'use client'", value: 'fetch' },
                     { label: 'useEffect', value: 'useEffect' },
                     { label: 'getInitialProps', value: 'gip' },
-                    { label: 'next-data-loader', value: 'loader' }
+                    { label: 'next-data-loader', value: 'loader' },
                 ],
-                correctAnswer: 'fetch'
+                correctAnswer: 'fetch',
             },
             {
                 name: 'q9',
-                question: 'Какой модификатор dynamic route позволяет сделать сегмент необязательным?',
+                question:
+                    'Какой модификатор dynamic route позволяет сделать сегмент необязательным?',
                 options: [
                     { label: '[[slug]]', value: 'optional' },
                     { label: '[slug?]', value: 'ts-optional' },
                     { label: '(slug)', value: 'group' },
-                    { label: '[...slug]', value: 'rest' }
+                    { label: '[...slug]', value: 'rest' },
                 ],
-                correctAnswer: 'optional'
+                correctAnswer: 'optional',
             },
             {
                 name: 'q10',
@@ -111,10 +114,10 @@ export const quiz = {
                     { label: 'Отключает кеш и включает SSR', value: 'force' },
                     { label: 'Включает ISR', value: 'isr' },
                     { label: 'Включает SWR', value: 'swr' },
-                    { label: 'Рендерит страницу при билде', value: 'ssg' }
+                    { label: 'Рендерит страницу при билде', value: 'ssg' },
                 ],
-                correctAnswer: 'force'
-            }
+                correctAnswer: 'force',
+            },
         ],
         senior: [
             {
@@ -124,9 +127,9 @@ export const quiz = {
                     { label: 'revalidateTag()', value: 'tag' },
                     { label: 'clearCache()', value: 'clear' },
                     { label: 'refreshISR()', value: 'refresh' },
-                    { label: "fetch(..., { cache: 'no-store' })", value: 'no-store' }
+                    { label: "fetch(..., { cache: 'no-store' })", value: 'no-store' },
                 ],
-                correctAnswer: 'tag'
+                correctAnswer: 'tag',
             },
             {
                 name: 'q12',
@@ -135,20 +138,21 @@ export const quiz = {
                     { label: 'Использовать shared layout в app/', value: 'shared' },
                     { label: 'Создать middleware', value: 'middleware' },
                     { label: 'Регистрировать через router.ts', value: 'router' },
-                    { label: 'Оборачивать в _app.tsx', value: '_app' }
+                    { label: 'Оборачивать в _app.tsx', value: '_app' },
                 ],
-                correctAnswer: 'shared'
+                correctAnswer: 'shared',
             },
             {
                 name: 'q13',
-                question: 'Какой способ использовать для условной маршрутизации на уровне сегментов?',
+                question:
+                    'Какой способ использовать для условной маршрутизации на уровне сегментов?',
                 options: [
                     { label: 'Middleware', value: 'middleware' },
                     { label: 'Catch-all маршруты', value: 'catch' },
                     { label: 'Route groups', value: 'group' },
-                    { label: 'Segment config', value: 'segment' }
+                    { label: 'Segment config', value: 'segment' },
                 ],
-                correctAnswer: 'middleware'
+                correctAnswer: 'middleware',
             },
             {
                 name: 'q14',
@@ -157,9 +161,9 @@ export const quiz = {
                     { label: 'Отключает кеширование fetch', value: 'no-store' },
                     { label: 'Кеширует ответ навсегда', value: 'forever' },
                     { label: 'Включает клиентский fetch', value: 'client' },
-                    { label: 'Ререндерит компонент', value: 'rerender' }
+                    { label: 'Ререндерит компонент', value: 'rerender' },
                 ],
-                correctAnswer: 'no-store'
+                correctAnswer: 'no-store',
             },
             {
                 name: 'q15',
@@ -168,10 +172,10 @@ export const quiz = {
                     { label: 'Создать файл error.tsx', value: 'error' },
                     { label: 'Обернуть в try/catch', value: 'try' },
                     { label: 'Добавить fallback в layout', value: 'fallback' },
-                    { label: 'Создать файл error-boundary.ts', value: 'boundary' }
+                    { label: 'Создать файл error-boundary.ts', value: 'boundary' },
                 ],
-                correctAnswer: 'error'
-            }
-        ]
-    }
-}
+                correctAnswer: 'error',
+            },
+        ],
+    },
+};

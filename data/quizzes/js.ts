@@ -10,9 +10,9 @@ export const quiz = {
                     { label: 'undefined', value: 'undefined' },
                     { label: 'true', value: 'true' },
                     { label: 'TypeError', value: 'typeerror' },
-                    { label: 'false', value: 'false' }
+                    { label: 'false', value: 'false' },
                 ],
-                correctAnswer: 'true'
+                correctAnswer: 'true',
             },
             {
                 name: 'q2',
@@ -21,9 +21,9 @@ export const quiz = {
                     { label: 'true', value: 'true' },
                     { label: 'false', value: 'false' },
                     { label: 'undefined', value: 'undefined' },
-                    { label: 'null', value: 'null' }
+                    { label: 'null', value: 'null' },
                 ],
-                correctAnswer: 'false'
+                correctAnswer: 'false',
             },
             {
                 name: 'q3',
@@ -32,9 +32,9 @@ export const quiz = {
                     { label: 'var — имеет функциональную область видимости', value: 'scope' },
                     { label: 'let — глобальная переменная', value: 'global' },
                     { label: 'var — создаёт замыкание', value: 'closure' },
-                    { label: 'let — не может быть переопределён', value: 'override' }
+                    { label: 'let — не может быть переопределён', value: 'override' },
                 ],
-                correctAnswer: 'scope'
+                correctAnswer: 'scope',
             },
             {
                 name: 'q4',
@@ -43,9 +43,9 @@ export const quiz = {
                     { label: 'Удаляет свойство', value: 'delete' },
                     { label: 'Аналог try/catch', value: 'trycatch' },
                     { label: 'Безопасный доступ к вложенным свойствам', value: 'safe' },
-                    { label: 'Только для объектов', value: 'objects' }
+                    { label: 'Только для объектов', value: 'objects' },
                 ],
-                correctAnswer: 'safe'
+                correctAnswer: 'safe',
             },
             {
                 name: 'q5',
@@ -54,10 +54,10 @@ export const quiz = {
                     { label: 'Запрещает изменение объекта', value: 'freeze' },
                     { label: 'Удаляет свойства', value: 'delete' },
                     { label: 'Добавляет методы', value: 'add' },
-                    { label: 'Создаёт копию', value: 'clone' }
+                    { label: 'Создаёт копию', value: 'clone' },
                 ],
-                correctAnswer: 'freeze'
-            }
+                correctAnswer: 'freeze',
+            },
         ],
         middle: [
             {
@@ -67,9 +67,9 @@ export const quiz = {
                     { label: 'Навсегда привязывает `this`', value: 'bind' },
                     { label: 'Создает замыкание', value: 'closure' },
                     { label: 'Вызывает функцию немедленно', value: 'call' },
-                    { label: 'Изменяет прототип', value: 'proto' }
+                    { label: 'Изменяет прототип', value: 'proto' },
                 ],
-                correctAnswer: 'bind'
+                correctAnswer: 'bind',
             },
             {
                 name: 'q2',
@@ -78,20 +78,20 @@ export const quiz = {
                     { label: 'Создается пустой объект с `__proto__`', value: 'default' },
                     { label: 'Создается массив', value: 'array' },
                     { label: 'Выбросится ошибка', value: 'error' },
-                    { label: 'Создается объект без прототипа', value: 'no_proto' }
+                    { label: 'Создается объект без прототипа', value: 'no_proto' },
                 ],
-                correctAnswer: 'no_proto'
+                correctAnswer: 'no_proto',
             },
             {
                 name: 'q3',
-                question: 'Чем отличается `==` от `===`?',
+                question: 'В чём основное отличие между операторами `==` и `===` в JavaScript?',
                 options: [
-                    { label: '`===` преобразует типы', value: 'coerce' },
-                    { label: '`==` сравнивает только значения', value: 'value' },
-                    { label: '`===` сравнивает значения и типы', value: 'strict' },
-                    { label: '`==` работает медленнее', value: 'slow' }
+                    { label: '`===` проверяет значение и тип без преобразования', value: 'strict' },
+                    { label: '`==` выполняет строгое сравнение', value: 'strict2' },
+                    { label: '`===` преобразует типы перед сравнением', value: 'coerce' },
+                    { label: '`==` используется только с числами', value: 'numbersOnly' },
                 ],
-                correctAnswer: 'strict'
+                correctAnswer: 'strict',
             },
             {
                 name: 'q4',
@@ -100,9 +100,9 @@ export const quiz = {
                     { label: '`symbol`', value: 'symbol' },
                     { label: '`object`', value: 'object' },
                     { label: '`function`', value: 'function' },
-                    { label: '`string`', value: 'string' }
+                    { label: '`string`', value: 'string' },
                 ],
-                correctAnswer: 'symbol'
+                correctAnswer: 'symbol',
             },
             {
                 name: 'q5',
@@ -111,10 +111,10 @@ export const quiz = {
                     { label: 'reverse', value: 'reverse' },
                     { label: 'filter', value: 'filter' },
                     { label: 'push', value: 'push' },
-                    { label: 'splice', value: 'splice' }
+                    { label: 'splice', value: 'splice' },
                 ],
-                correctAnswer: 'filter'
-            }
+                correctAnswer: 'filter',
+            },
         ],
         senior: [
             {
@@ -124,9 +124,9 @@ export const quiz = {
                     { label: 'Проверяет тип', value: 'check' },
                     { label: 'Возвращает undefined', value: 'undefined' },
                     { label: 'Создает область видимости', value: 'scope' },
-                    { label: 'Удаляет переменную', value: 'delete' }
+                    { label: 'Удаляет переменную', value: 'delete' },
                 ],
-                correctAnswer: 'undefined'
+                correctAnswer: 'undefined',
             },
             {
                 name: 'q2',
@@ -135,9 +135,9 @@ export const quiz = {
                     { label: 'Обрабатывает setInterval синхронно', value: 'interval' },
                     { label: 'Сначала микротаски, потом макротаски', value: 'micro_macro' },
                     { label: 'Запускает синхронный код первым', value: 'sync_first' },
-                    { label: 'Обрабатывает события последовательно', value: 'queue' }
+                    { label: 'Обрабатывает события последовательно', value: 'queue' },
                 ],
-                correctAnswer: 'micro_macro'
+                correctAnswer: 'micro_macro',
             },
             {
                 name: 'q3',
@@ -146,9 +146,9 @@ export const quiz = {
                     { label: 'true', value: 'true' },
                     { label: 'TypeError', value: 'typeerror' },
                     { label: 'undefined', value: 'undefined' },
-                    { label: 'false', value: 'false' }
+                    { label: 'false', value: 'false' },
                 ],
-                correctAnswer: 'true'
+                correctAnswer: 'true',
             },
             {
                 name: 'q4',
@@ -157,9 +157,9 @@ export const quiz = {
                     { label: 'Промис выполнится', value: 'done' },
                     { label: 'Результат 42', value: '42' },
                     { label: 'Будет undefined', value: 'undef' },
-                    { label: 'Ошибка 42', value: 'error' }
+                    { label: 'Ошибка 42', value: 'error' },
                 ],
-                correctAnswer: 'error'
+                correctAnswer: 'error',
             },
             {
                 name: 'q5',
@@ -168,10 +168,10 @@ export const quiz = {
                     { label: 'Позволяет перехватывать операции с объектом', value: 'trap' },
                     { label: 'Удаляет методы', value: 'remove' },
                     { label: 'Шифрует объект', value: 'encrypt' },
-                    { label: 'Создает глубокую копию', value: 'clone' }
+                    { label: 'Создает глубокую копию', value: 'clone' },
                 ],
-                correctAnswer: 'trap'
-            }
-        ]
-    }
-}
+                correctAnswer: 'trap',
+            },
+        ],
+    },
+};

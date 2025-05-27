@@ -1,7 +1,7 @@
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Text } from '@chakra-ui/react';
 
 export default function Footer() {
-    const year = new Date().getFullYear()
+    const year = new Date().getFullYear();
 
     return (
         <Box as="footer" bg="subtleBg" w="full" py={3} textAlign="center">
@@ -9,5 +9,5 @@ export default function Footer() {
                 © {year} QuizApp. Все права защищены.
             </Text>
         </Box>
-    )
+    );
 }

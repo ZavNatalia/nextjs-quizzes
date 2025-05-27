@@ -5,14 +5,15 @@ export const quiz = {
         junior: [
             {
                 name: 'q1',
-                question: 'Какой тип у функции, которая никогда не возвращает значение (например, бросает исключение)?',
+                question:
+                    'Какой тип у функции, которая никогда не возвращает значение (например, бросает исключение)?',
                 options: [
                     { label: '`never`', value: 'never' },
                     { label: '`null`', value: 'null' },
                     { label: '`void`', value: 'void' },
-                    { label: '`undefined`', value: 'undefined' }
+                    { label: '`undefined`', value: 'undefined' },
                 ],
-                correctAnswer: 'never'
+                correctAnswer: 'never',
             },
             {
                 name: 'q2',
@@ -21,9 +22,9 @@ export const quiz = {
                     { label: '`object`', value: 'object' },
                     { label: '`Partial<T>`', value: 'partial' },
                     { label: '`Record<"a" | "b", string>`', value: 'record' },
-                    { label: '`any`', value: 'any' }
+                    { label: '`any`', value: 'any' },
                 ],
-                correctAnswer: 'record'
+                correctAnswer: 'record',
             },
             {
                 name: 'q3',
@@ -32,9 +33,9 @@ export const quiz = {
                     { label: 'interface быстрее компилируется', value: 'speed' },
                     { label: 'type используется только для функций', value: 'functions' },
                     { label: 'interface можно расширять декларативно', value: 'interface' },
-                    { label: 'type нельзя использовать с generic', value: 'nogeneric' }
+                    { label: 'type нельзя использовать с generic', value: 'nogeneric' },
                 ],
-                correctAnswer: 'interface'
+                correctAnswer: 'interface',
             },
             {
                 name: 'q4',
@@ -43,21 +44,22 @@ export const quiz = {
                     { label: '`function<T> fn(): Promise`', value: 'wrong1' },
                     { label: '`function fn<T>(): T`', value: 'direct' },
                     { label: '`fn = <T>() => T`', value: 'wrong2' },
-                    { label: '`function fn<T>(): Promise<T>`', value: 'promise' }
+                    { label: '`function fn<T>(): Promise<T>`', value: 'promise' },
                 ],
-                correctAnswer: 'promise'
+                correctAnswer: 'promise',
             },
             {
                 name: 'q5',
-                question: 'Какой тип использовать, если объект может быть либо `User`, либо `Admin` с разными полями?',
+                question:
+                    'Какой тип использовать, если объект может быть либо `User`, либо `Admin` с разными полями?',
                 options: [
                     { label: 'Literal type', value: 'literal' },
                     { label: 'Discriminated union', value: 'union' },
                     { label: 'Mapped type', value: 'mapped' },
-                    { label: 'Intersection type', value: 'intersection' }
+                    { label: 'Intersection type', value: 'intersection' },
                 ],
-                correctAnswer: 'union'
-            }
+                correctAnswer: 'union',
+            },
         ],
         middle: [
             {
@@ -67,9 +69,9 @@ export const quiz = {
                     { label: 'Возвращает значения объекта', value: 'values' },
                     { label: 'Возвращает имена полей типа', value: 'keys' },
                     { label: 'Создает интерфейс', value: 'interface' },
-                    { label: 'Удаляет поля', value: 'omit' }
+                    { label: 'Удаляет поля', value: 'omit' },
                 ],
-                correctAnswer: 'keys'
+                correctAnswer: 'keys',
             },
             {
                 name: 'q2',
@@ -78,9 +80,9 @@ export const quiz = {
                     { label: 'Проверяет тип во время выполнения', value: 'runtime' },
                     { label: 'Определяет тип переменной', value: 'type' },
                     { label: 'Возвращает значение', value: 'value' },
-                    { label: 'Удаляет тип', value: 'remove' }
+                    { label: 'Удаляет тип', value: 'remove' },
                 ],
-                correctAnswer: 'type'
+                correctAnswer: 'type',
             },
             {
                 name: 'q3',
@@ -89,9 +91,9 @@ export const quiz = {
                     { label: '`Partial<T>`', value: 'partial' },
                     { label: '`Immutable<T>`', value: 'immutable' },
                     { label: '`Const<T>`', value: 'const' },
-                    { label: '`Readonly<T>`', value: 'readonly' }
+                    { label: '`Readonly<T>`', value: 'readonly' },
                 ],
-                correctAnswer: 'readonly'
+                correctAnswer: 'readonly',
             },
             {
                 name: 'q4',
@@ -100,9 +102,9 @@ export const quiz = {
                     { label: 'Возвращает union', value: 'union' },
                     { label: 'Фильтрует поля', value: 'filter' },
                     { label: 'Создает interface', value: 'interface' },
-                    { label: 'Проверяет тип и выбирает результат', value: 'conditional' }
+                    { label: 'Проверяет тип и выбирает результат', value: 'conditional' },
                 ],
-                correctAnswer: 'conditional'
+                correctAnswer: 'conditional',
             },
             {
                 name: 'q5',
@@ -111,10 +113,10 @@ export const quiz = {
                     { label: '`ReturnType<T>`', value: 'returntype' },
                     { label: '`Infer<T>`', value: 'infer' },
                     { label: '`Extract<T>`', value: 'extract' },
-                    { label: '`Unwrap<T>`', value: 'unwrap' }
+                    { label: '`Unwrap<T>`', value: 'unwrap' },
                 ],
-                correctAnswer: 'returntype'
-            }
+                correctAnswer: 'returntype',
+            },
         ],
         senior: [
             {
@@ -124,9 +126,9 @@ export const quiz = {
                     { label: 'Создает alias', value: 'alias' },
                     { label: 'Сравнивает типы', value: 'compare' },
                     { label: 'Удаляет тип', value: 'remove' },
-                    { label: 'Позволяет извлечь тип из выражения', value: 'infer' }
+                    { label: 'Позволяет извлечь тип из выражения', value: 'infer' },
                 ],
-                correctAnswer: 'infer'
+                correctAnswer: 'infer',
             },
             {
                 name: 'q2',
@@ -135,9 +137,9 @@ export const quiz = {
                     { label: 'Удаляет типы из T, которые есть в U', value: 'exclude' },
                     { label: 'Проверяет совместимость', value: 'compat' },
                     { label: 'Упрощает типы', value: 'simplify' },
-                    { label: 'Добавляет типы из U в T', value: 'merge' }
+                    { label: 'Добавляет типы из U в T', value: 'merge' },
                 ],
-                correctAnswer: 'exclude'
+                correctAnswer: 'exclude',
             },
             {
                 name: 'q3',
@@ -146,9 +148,9 @@ export const quiz = {
                     { label: 'Удаляет мутабельность', value: 'remove' },
                     { label: 'Создает тип literal', value: 'literal' },
                     { label: 'Превращает переменную в строку', value: 'string' },
-                    { label: 'Делает объект и его поля иммутабельными', value: 'readonly' }
+                    { label: 'Делает объект и его поля иммутабельными', value: 'readonly' },
                 ],
-                correctAnswer: 'readonly'
+                correctAnswer: 'readonly',
             },
             {
                 name: 'q4',
@@ -157,9 +159,9 @@ export const quiz = {
                     { label: 'Проверяет, что значение удовлетворяет типу', value: 'satisfies' },
                     { label: 'Создает alias', value: 'alias' },
                     { label: 'Преобразует тип', value: 'transform' },
-                    { label: 'Удаляет поля', value: 'remove' }
+                    { label: 'Удаляет поля', value: 'remove' },
                 ],
-                correctAnswer: 'satisfies'
+                correctAnswer: 'satisfies',
             },
             {
                 name: 'q5',
@@ -168,10 +170,10 @@ export const quiz = {
                     { label: 'Удаляет поля из типа', value: 'omit' },
                     { label: 'Создает новый тип', value: 'new' },
                     { label: 'Маппит типы', value: 'map' },
-                    { label: 'Выбирает определённые поля из типа', value: 'pick' }
+                    { label: 'Выбирает определённые поля из типа', value: 'pick' },
                 ],
-                correctAnswer: 'pick'
-            }
-        ]
-    }
-}
+                correctAnswer: 'pick',
+            },
+        ],
+    },
+};

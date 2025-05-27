@@ -1,24 +1,20 @@
 import React from 'react';
-import { notFound } from 'next/navigation'
-import { quizzes } from '@/data/quizzes'
-import { Container, Heading, VStack, Button } from '@chakra-ui/react'
-import Link from 'next/link'
-import BackButton from '@/components/BackButton'
+import { notFound } from 'next/navigation';
+import { quizzes } from '@/data/quizzes';
+import { Container, Heading, VStack, Button } from '@chakra-ui/react';
+import Link from 'next/link';
+import BackButton from '@/components/BackButton';
 
 export function generateStaticParams() {
-    return quizzes.map(q => ({ slug: q.slug }))
+    return quizzes.map((q) => ({ slug: q.slug }));
 }
 
-export default async function QuizLevelPage({
-                                          params,
-                                      }: {
-    params: Promise<{ slug: string }>
-}) {
-    const { slug } = await params
-    const quiz = quizzes.find(q => q.slug === slug)
-    if (!quiz) return notFound()
+export default async function QuizLevelPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const quiz = quizzes.find((q) => q.slug === slug);
+    if (!quiz) return notFound();
 
-    const levels = ['junior', 'middle', 'senior'] as const
+    const levels = ['junior', 'middle', 'senior'] as const;
 
     return (
         <Container maxW="4xl" py={10} flexGrow={1}>
@@ -29,7 +25,7 @@ export default async function QuizLevelPage({
                     {quiz.title}: выбери уровень сложности
                 </Heading>
 
-                {levels.map(level => (
+                {levels.map((level) => (
                     <Button
                         key={level}
                         as={Link}
@@ -45,5 +41,5 @@ export default async function QuizLevelPage({
                 ))}
             </VStack>
         </Container>
-    )
+    );
 }
