@@ -13,6 +13,8 @@ export const quiz = {
                     { label: 'Нет', value: 'no' },
                 ],
                 correctAnswer: 'no',
+                explanation:
+                    'Хуки React (например, useState, useEffect) нужно вызывать на верхнем уровне компонента, а не внутри условий или циклов, чтобы React корректно отслеживал порядок вызова хуков.',
             },
             {
                 name: 'q2',
@@ -24,6 +26,8 @@ export const quiz = {
                     { label: 'Обрабатывает события', value: 'event' },
                 ],
                 correctAnswer: 'memo',
+                explanation:
+                    '`useMemo` позволяет запоминать результат функции между рендерами, если зависимости не изменились. Это полезно для оптимизации производительности при дорогих вычислениях.',
             },
             {
                 name: 'q3',
@@ -35,6 +39,8 @@ export const quiz = {
                     { label: 'Включает строгую типизацию', value: 'types' },
                 ],
                 correctAnswer: 'strict',
+                explanation:
+                    '`React.StrictMode` помогает выявлять потенциальные проблемы, например, небезопасные жизненные циклы или неправильное использование хуков. Он не влияет на поведение в продакшене.',
             },
             {
                 name: 'q4',
@@ -46,6 +52,8 @@ export const quiz = {
                     { label: '() => <Component />', value: 'fn' },
                 ],
                 correctAnswer: 'fn',
+                explanation:
+                    'Функция `() => <Component />` позволяет отложить создание компонента до момента использования и сохранить контроль над его рендером в родителе.',
             },
             {
                 name: 'q5',
@@ -57,6 +65,8 @@ export const quiz = {
                     { label: 'Сбросится DOM', value: 'reset' },
                 ],
                 correctAnswer: 'noRender',
+                explanation:
+                    'React сравнивает предыдущее и новое значение состояния. Если они равны (по ссылке или значению), ререндер не происходит для оптимизации.',
             },
         ],
         middle: [
@@ -70,6 +80,8 @@ export const quiz = {
                     { label: 'Функция кешируется навсегда', value: 'cache' },
                 ],
                 correctAnswer: 'new',
+                explanation:
+                    'Без массива зависимостей useCallback будет возвращать новую функцию при каждом рендере. Чтобы функция мемоизировалась, нужен массив зависимостей.',
             },
             {
                 name: 'q2',
@@ -81,6 +93,8 @@ export const quiz = {
                     { label: 'useEffect', value: 'effect' },
                 ],
                 correctAnswer: 'effect',
+                explanation:
+                    'Хук useEffect вызывается после монтирования компонента, когда DOM уже доступен. Это безопасное место для прямой работы с DOM-элементами.',
             },
             {
                 name: 'q3',
@@ -92,6 +106,8 @@ export const quiz = {
                     { label: 'Для уникальности id', value: 'id' },
                 ],
                 correctAnswer: 'opt',
+                explanation:
+                    'Ключи позволяют React эффективно обновлять DOM, определяя, какие элементы изменились, добавились или удалились, минимизируя перерисовку.',
             },
             {
                 name: 'q4',
@@ -103,6 +119,8 @@ export const quiz = {
                     { label: 'Создает новый DOM-элемент', value: 'dom' },
                 ],
                 correctAnswer: 'ref',
+                explanation:
+                    '`useRef` используется для хранения мутабельных значений, которые сохраняются между рендерами и не вызывают повторный рендер при изменении.',
             },
             {
                 name: 'q5',
@@ -114,6 +132,8 @@ export const quiz = {
                     { label: 'Вызовется один раз', value: 'once' },
                 ],
                 correctAnswer: 'loop',
+                explanation:
+                    'Вызов setState внутри render вызовет новый рендер, что снова вызовет setState — это приведёт к бесконечному циклу и ошибке.',
             },
         ],
         senior: [
@@ -127,6 +147,8 @@ export const quiz = {
                     { label: 'Для SEO', value: 'seo' },
                 ],
                 correctAnswer: 'lazy',
+                explanation:
+                    '`React.lazy` позволяет загружать компоненты по требованию, а `Suspense` позволяет отобразить fallback пока компонент загружается — это улучшает производительность.',
             },
             {
                 name: 'q2',
@@ -138,6 +160,8 @@ export const quiz = {
                     { label: 'Оборачивает хук', value: 'hook' },
                 ],
                 correctAnswer: 'pass',
+                explanation:
+                    '`forwardRef` позволяет передать `ref` от родителя к DOM-элементу внутри дочернего компонента. Это полезно для управления фокусом и доступом к DOM из родителя.',
             },
             {
                 name: 'q3',
@@ -149,6 +173,8 @@ export const quiz = {
                     { label: 'Для синхронных изменений DOM перед отрисовкой', value: 'layout' },
                 ],
                 correctAnswer: 'layout',
+                explanation:
+                    '`useLayoutEffect` вызывается до отрисовки экрана и подходит для синхронных операций с DOM. Это полезно, когда важно избежать визуальных артефактов.',
             },
             {
                 name: 'q4',
@@ -160,6 +186,8 @@ export const quiz = {
                     { label: 'Компонент', value: 'component' },
                 ],
                 correctAnswer: 'tuple',
+                explanation:
+                    '`useReducer` возвращает массив из двух элементов: текущего состояния и функции `dispatch`, которая позволяет обновлять состояние с помощью reducer-функции.',
             },
             {
                 name: 'q5',
@@ -174,6 +202,8 @@ export const quiz = {
                     { label: 'Обрабатывает события', value: 'event' },
                 ],
                 correctAnswer: 'context',
+                explanation:
+                    'Context API позволяет передавать данные (например, тему, язык) через дерево компонентов без необходимости пробрасывания пропсов на каждом уровне.',
             },
         ],
     },

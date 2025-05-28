@@ -13,6 +13,7 @@ export const quiz = {
                     { label: 'Оптимизирует будущие изменения', value: 'optimize' },
                 ],
                 correctAnswer: 'optimize',
+                explanation: 'Свойство `will-change` подсказывает браузеру, какие свойства элемента, скорее всего, изменятся, чтобы он мог заранее оптимизировать их обработку и повысить производительность.'
             },
             {
                 name: 'q2',
@@ -24,6 +25,7 @@ export const quiz = {
                     { label: ':first-child', value: 'first-child' },
                 ],
                 correctAnswer: 'first-child',
+                explanation: 'Селектор `:first-child` выбирает первый дочерний элемент своего родителя, тогда как `:nth-child(1)` может выбрать элемент с любым тегом, если он первый.'
             },
             {
                 name: 'q3',
@@ -35,6 +37,7 @@ export const quiz = {
                     { label: 'Остается на месте', value: 'fixed' },
                 ],
                 correctAnswer: 'sticky',
+                explanation: 'Свойство `position: sticky` делает элемент "залипающим": он ведёт себя как `relative`, пока не достигнет указанного offset, после чего становится `fixed` до выхода из родительского контейнера.'
             },
             {
                 name: 'q4',
@@ -46,6 +49,7 @@ export const quiz = {
                     { label: 'Применяет эффекты к фону под элементом', value: 'blur' },
                 ],
                 correctAnswer: 'blur',
+                explanation: '`backdrop-filter` применяет визуальные эффекты (например, размытие или контраст) к области фона, расположенной под элементом, но не к самому элементу.'
             },
             {
                 name: 'q5',
@@ -57,7 +61,8 @@ export const quiz = {
                     { label: '$color: red;', value: 'sass' },
                 ],
                 correctAnswer: 'var',
-            },
+                explanation: 'В CSS переменные задаются с помощью синтаксиса `--имя: значение;` (например, `--color: red;`). Затем их можно использовать через `var(--color)`.'
+            }
         ],
         middle: [
             {
@@ -70,6 +75,7 @@ export const quiz = {
                     { label: 'Изолирует только стили', value: 'style' },
                 ],
                 correctAnswer: 'both',
+                explanation: 'Свойство `contain` со значением `layout style` указывает браузеру, что элемент изолирован по стилям и раскладке, что позволяет оптимизировать производительность.'
             },
             {
                 name: 'q2',
@@ -81,11 +87,11 @@ export const quiz = {
                     { label: 'Отключает стили', value: 'off' },
                 ],
                 correctAnswer: 'true',
+                explanation: 'Директива `@supports` позволяет писать условные стили, которые применяются только если браузер поддерживает определённое CSS-свойство.'
             },
             {
                 name: 'q3',
-                question:
-                    'Какой способ центрирования элемента по горизонтали и вертикали с помощью Flexbox?',
+                question: 'Какой способ центрирования элемента по горизонтали и вертикали с помощью Flexbox?',
                 options: [
                     {
                         label: 'display: flex; justify-content: center; align-items: center;',
@@ -96,6 +102,7 @@ export const quiz = {
                     { label: 'text-align: center;', value: 'text' },
                 ],
                 correctAnswer: 'both',
+                explanation: 'Чтобы отцентрировать элемент по обеим осям с помощью Flexbox, нужно использовать `justify-content: center` и `align-items: center` внутри `display: flex` контейнера.'
             },
             {
                 name: 'q4',
@@ -107,6 +114,7 @@ export const quiz = {
                     { label: 'padding: 56.25%;', value: 'padding' },
                 ],
                 correctAnswer: 'ratio',
+                explanation: 'Свойство `aspect-ratio` позволяет задать соотношение сторон, например `16 / 9`, без использования хака с `padding`.'
             },
             {
                 name: 'q5',
@@ -118,7 +126,8 @@ export const quiz = {
                     { label: 'Стили внутри @keyframes', value: 'key' },
                 ],
                 correctAnswer: 'var',
-            },
+                explanation: 'Custom media queries (например, `@custom-media`) позволяют создавать настраиваемые медиа-запросы, аналогично переменным. Поддержка ограничена, но используется с PostCSS.'
+            }
         ],
         senior: [
             {
@@ -131,6 +140,7 @@ export const quiz = {
                     { label: 'Отключает вложенные сетки', value: 'off' },
                 ],
                 correctAnswer: 'inherit',
+                explanation: 'Свойство `subgrid` позволяет дочернему элементу использовать линии сетки родителя, сохраняя согласованность макета.'
             },
             {
                 name: 'q2',
@@ -142,11 +152,11 @@ export const quiz = {
                     { label: 'Вызывает JavaScript', value: 'js' },
                 ],
                 correctAnswer: 'has',
+                explanation: 'Селектор `:has()` позволяет выбирать элемент по наличию у него определённых потомков — это селектор будущего, уже поддерживается в Safari и частично в других браузерах.'
             },
             {
                 name: 'q3',
-                question:
-                    'Какой из способов отрисовки — наиболее производительный для сложной анимации?',
+                question: 'Какой из способов отрисовки — наиболее производительный для сложной анимации?',
                 options: [
                     { label: 'Top + left', value: 'tl' },
                     { label: 'Margin + padding', value: 'mp' },
@@ -154,6 +164,7 @@ export const quiz = {
                     { label: 'Display: none + block', value: 'display' },
                 ],
                 correctAnswer: 'transform',
+                explanation: 'Использование `transform` и `will-change` позволяет избежать перерисовки и перефлоу, что делает анимации более производительными.'
             },
             {
                 name: 'q4',
@@ -165,6 +176,7 @@ export const quiz = {
                     { label: 'Элемент будет проигнорирован', value: 'ignore' },
                 ],
                 correctAnswer: 'none',
+                explanation: 'Свойство `z-index` работает только для элементов с `position` отличной от `static`. Без неё z-index не имеет эффекта.'
             },
             {
                 name: 'q5',
@@ -176,7 +188,8 @@ export const quiz = {
                     { label: 'Невозможно задать порядок', value: 'no' },
                 ],
                 correctAnswer: 'order',
-            },
-        ],
-    },
+                explanation: 'Слои в `@layer` применяются в порядке объявления. Это позволяет точно управлять приоритетом каскада между слоями.'
+            }
+        ]
+    }
 };

@@ -13,6 +13,8 @@ export const quiz = {
                     { label: 'false', value: 'false' },
                 ],
                 correctAnswer: 'true',
+                explanation:
+                    '[] + {} приводит к сложению строки и объекта: [] преобразуется в пустую строку, {} — в "[object Object]". Получается строка "[object Object]", которая равна себе.',
             },
             {
                 name: 'q2',
@@ -24,6 +26,8 @@ export const quiz = {
                     { label: 'null', value: 'null' },
                 ],
                 correctAnswer: 'false',
+                explanation:
+                    'По спецификации `NaN` не равен ничему, даже самому себе. Поэтому `NaN === NaN` возвращает `false`.',
             },
             {
                 name: 'q3',
@@ -35,6 +39,8 @@ export const quiz = {
                     { label: 'let — не может быть переопределён', value: 'override' },
                 ],
                 correctAnswer: 'scope',
+                explanation:
+                    '`var` ограничен функцией, в которой объявлен, а `let` — блоком (например, if, for). Это позволяет избежать утечек переменных и конфликтов.',
             },
             {
                 name: 'q4',
@@ -46,6 +52,8 @@ export const quiz = {
                     { label: 'Только для объектов', value: 'objects' },
                 ],
                 correctAnswer: 'safe',
+                explanation:
+                    'Оператор `?.` позволяет безопасно обращаться к вложенным свойствам объекта. Если любая часть цепочки `undefined` или `null`, возвращается `undefined`, не выбрасывая ошибки.',
             },
             {
                 name: 'q5',
@@ -57,6 +65,8 @@ export const quiz = {
                     { label: 'Создаёт копию', value: 'clone' },
                 ],
                 correctAnswer: 'freeze',
+                explanation:
+                    '`Object.freeze()` делает объект неизменяемым: нельзя добавлять, удалять или изменять его свойства. Но вложенные объекты при этом не замораживаются.',
             },
         ],
         middle: [
@@ -70,6 +80,8 @@ export const quiz = {
                     { label: 'Изменяет прототип', value: 'proto' },
                 ],
                 correctAnswer: 'bind',
+                explanation:
+                    '`bind` возвращает новую функцию с привязанным значением `this`, не вызывая её немедленно. Полезно для передачи метода без потери контекста.',
             },
             {
                 name: 'q2',
@@ -81,6 +93,8 @@ export const quiz = {
                     { label: 'Создается объект без прототипа', value: 'no_proto' },
                 ],
                 correctAnswer: 'no_proto',
+                explanation:
+                    'Такой объект не наследует от `Object.prototype`. Это удобно, когда не нужны лишние свойства (например, `toString`) — часто используется для мап.',
             },
             {
                 name: 'q3',
@@ -92,6 +106,8 @@ export const quiz = {
                     { label: '`==` используется только с числами', value: 'numbersOnly' },
                 ],
                 correctAnswer: 'strict',
+                explanation:
+                    '`===` проверяет и тип, и значение, а `==` выполняет неявное преобразование типов (type coercion). Поэтому `===` предпочтительнее в большинстве случаев.',
             },
             {
                 name: 'q4',
@@ -103,6 +119,8 @@ export const quiz = {
                     { label: '`string`', value: 'string' },
                 ],
                 correctAnswer: 'symbol',
+                explanation:
+                    '`Symbol()` возвращает уникальное значение специального типа — "symbol". Оно не сравнимо с другими символами и часто используется как ключ в объектах.',
             },
             {
                 name: 'q5',
@@ -114,6 +132,8 @@ export const quiz = {
                     { label: 'splice', value: 'splice' },
                 ],
                 correctAnswer: 'filter',
+                explanation:
+                    '`filter` возвращает новый массив, не изменяя исходный. Остальные методы (`reverse`, `push`, `splice`) мутируют (изменяют) оригинальный массив.',
             },
         ],
         senior: [
@@ -127,6 +147,8 @@ export const quiz = {
                     { label: 'Удаляет переменную', value: 'delete' },
                 ],
                 correctAnswer: 'undefined',
+                explanation:
+                    '`void` позволяет вычислить выражение и вернуть `undefined` вне зависимости от его результата. Часто используется для безопасного вызова функций в ссылках (`javascript:void(0)`).',
             },
             {
                 name: 'q2',
@@ -138,6 +160,8 @@ export const quiz = {
                     { label: 'Обрабатывает события последовательно', value: 'queue' },
                 ],
                 correctAnswer: 'micro_macro',
+                explanation:
+                    'Сначала выполняется весь синхронный код, затем микротаски (например, `.then` из промисов), и только потом макротаски (`setTimeout`, `setInterval`).',
             },
             {
                 name: 'q3',
@@ -149,6 +173,8 @@ export const quiz = {
                     { label: 'false', value: 'false' },
                 ],
                 correctAnswer: 'true',
+                explanation:
+                    '`Object.is()` — это способ точного сравнения, который учитывает особенности `NaN`. В отличие от `===`, он возвращает `true` для `Object.is(NaN, NaN)`.',
             },
             {
                 name: 'q4',
@@ -160,6 +186,8 @@ export const quiz = {
                     { label: 'Ошибка 42', value: 'error' },
                 ],
                 correctAnswer: 'error',
+                explanation:
+                    'Ошибка, выброшенная в `then`, превращается в отклонённый промис. Поэтому `.then(() => { throw 42 })` вызовет ошибку с этим значением.',
             },
             {
                 name: 'q5',
@@ -171,6 +199,8 @@ export const quiz = {
                     { label: 'Создает глубокую копию', value: 'clone' },
                 ],
                 correctAnswer: 'trap',
+                explanation:
+                    '`Proxy` позволяет перехватывать и изменять поведение операций с объектами: чтение, запись, удаление свойств, вызовы функций и другое. Это мощный инструмент метапрограммирования.',
             },
         ],
     },

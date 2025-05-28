@@ -14,6 +14,8 @@ export const quiz = {
                     { label: '`undefined`', value: 'undefined' },
                 ],
                 correctAnswer: 'never',
+                explanation:
+                    'Тип `never` означает, что функция не завершает выполнение нормально — например, выбрасывает исключение или бесконечно выполняется.',
             },
             {
                 name: 'q2',
@@ -25,6 +27,8 @@ export const quiz = {
                     { label: '`any`', value: 'any' },
                 ],
                 correctAnswer: 'record',
+                explanation:
+                    '`Record<"a" | "b", string>` создаёт тип объекта, у которого только ключи "a" и "b", и значения типа string.',
             },
             {
                 name: 'q3',
@@ -36,6 +40,8 @@ export const quiz = {
                     { label: 'type нельзя использовать с generic', value: 'nogeneric' },
                 ],
                 correctAnswer: 'interface',
+                explanation:
+                    '`interface` можно расширять с помощью `extends`, и повторные объявления объединяются. `type` — более универсален, но не поддерживает декларативное расширение.',
             },
             {
                 name: 'q4',
@@ -47,6 +53,8 @@ export const quiz = {
                     { label: '`function fn<T>(): Promise<T>`', value: 'promise' },
                 ],
                 correctAnswer: 'promise',
+                explanation:
+                    'Запись `function fn<T>(): Promise<T>` означает, что функция возвращает промис с результатом типа `T`.',
             },
             {
                 name: 'q5',
@@ -59,6 +67,8 @@ export const quiz = {
                     { label: 'Intersection type', value: 'intersection' },
                 ],
                 correctAnswer: 'union',
+                explanation:
+                    'Discriminated union (дискриминируемое объединение) позволяет задать тип, который может быть одним из нескольких, обычно с общим дискриминатором (`type`, `role` и т.п.).',
             },
         ],
         middle: [
@@ -72,6 +82,8 @@ export const quiz = {
                     { label: 'Удаляет поля', value: 'omit' },
                 ],
                 correctAnswer: 'keys',
+                explanation:
+                    '`keyof T` создаёт тип, представляющий все ключи объекта типа `T` в виде объединения строк.',
             },
             {
                 name: 'q2',
@@ -83,6 +95,8 @@ export const quiz = {
                     { label: 'Удаляет тип', value: 'remove' },
                 ],
                 correctAnswer: 'type',
+                explanation:
+                    'В контексте типов `typeof` позволяет получить тип переменной или значения, например: `const x = 5; type X = typeof x`.',
             },
             {
                 name: 'q3',
@@ -94,6 +108,8 @@ export const quiz = {
                     { label: '`Readonly<T>`', value: 'readonly' },
                 ],
                 correctAnswer: 'readonly',
+                explanation:
+                    '`Readonly<T>` делает все поля объекта неизменяемыми: попытка присвоить новое значение вызовет ошибку компиляции.',
             },
             {
                 name: 'q4',
@@ -105,6 +121,8 @@ export const quiz = {
                     { label: 'Проверяет тип и выбирает результат', value: 'conditional' },
                 ],
                 correctAnswer: 'conditional',
+                explanation:
+                    'Условные типы позволяют выбирать один тип из двух, в зависимости от того, удовлетворяет ли `T` ограничению `U`.',
             },
             {
                 name: 'q5',
@@ -116,6 +134,8 @@ export const quiz = {
                     { label: '`Unwrap<T>`', value: 'unwrap' },
                 ],
                 correctAnswer: 'returntype',
+                explanation:
+                    '`ReturnType<T>` позволяет извлечь тип, возвращаемый функцией типа `T`, например: `type R = ReturnType<() => string>` даст `string`.',
             },
         ],
         senior: [
@@ -129,6 +149,8 @@ export const quiz = {
                     { label: 'Позволяет извлечь тип из выражения', value: 'infer' },
                 ],
                 correctAnswer: 'infer',
+                explanation:
+                    'Оператор `infer` используется внутри условных типов для извлечения подтипа — например, `T extends Array<infer U> ? U : never` извлечёт тип элементов массива.',
             },
             {
                 name: 'q2',
@@ -140,6 +162,8 @@ export const quiz = {
                     { label: 'Добавляет типы из U в T', value: 'merge' },
                 ],
                 correctAnswer: 'exclude',
+                explanation:
+                    '`Exclude<T, U>` создаёт тип, исключая из `T` те члены, которые также присутствуют в `U` — например, `Exclude<"a" | "b", "b">` даст `"a"`.',
             },
             {
                 name: 'q3',
@@ -151,6 +175,8 @@ export const quiz = {
                     { label: 'Делает объект и его поля иммутабельными', value: 'readonly' },
                 ],
                 correctAnswer: 'readonly',
+                explanation:
+                    'Выражение `as const` делает объект иммутабельным и присваивает каждому полю максимально конкретный тип (например, не `string`, а конкретное значение).',
             },
             {
                 name: 'q4',
@@ -162,6 +188,8 @@ export const quiz = {
                     { label: 'Удаляет поля', value: 'remove' },
                 ],
                 correctAnswer: 'satisfies',
+                explanation:
+                    '`satisfies` проверяет соответствие типа, при этом сохраняет наиболее узкий тип значения. Это удобно для строгой типизации, не теряя конкретику.',
             },
             {
                 name: 'q5',
@@ -173,6 +201,8 @@ export const quiz = {
                     { label: 'Выбирает определённые поля из типа', value: 'pick' },
                 ],
                 correctAnswer: 'pick',
+                explanation:
+                    '`Pick<T, K>` создаёт тип, содержащий только указанные поля `K` из типа `T`. Например, `Pick<User, "id" | "name">` оставит только эти поля.',
             },
         ],
     },

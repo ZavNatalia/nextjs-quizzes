@@ -1,10 +1,15 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Field, Form, Formik } from 'formik';
 import type { FieldProps } from 'formik';
 import * as Yup from 'yup';
 import {
+    Accordion,
+    AccordionItem,
+    AccordionButton,
+    AccordionPanel,
+    AccordionIcon,
     Button,
     FormControl,
     FormErrorMessage,
@@ -12,6 +17,7 @@ import {
     Radio,
     RadioGroup,
     VStack,
+    Box,
 } from '@chakra-ui/react';
 
 interface QuizQuestion {
@@ -19,6 +25,7 @@ interface QuizQuestion {
     question: string;
     options: { label: string; value: string }[];
     correctAnswer: string;
+    explanation?: string;
 }
 
 interface Quiz {
@@ -29,7 +36,6 @@ interface Quiz {
 
 export default function QuizForm({ quiz }: { quiz: Quiz }) {
     const { questions } = quiz;
-
     const initialValues = Object.fromEntries(questions.map((q) => [q.name, '']));
 
     const validationSchema = Yup.object(
@@ -37,6 +43,9 @@ export default function QuizForm({ quiz }: { quiz: Quiz }) {
             questions.map((q) => [q.name, Yup.string().required('Выберите один из вариантов')])
         )
     );
+
+    const [showExplanations, setShowExplanations] = useState<Record<string, boolean>>({});
+    const [hasSubmitted, setHasSubmitted] = useState(false);
 
     return (
         <Formik
@@ -47,7 +56,6 @@ export default function QuizForm({ quiz }: { quiz: Quiz }) {
             onSubmit={(values, { setSubmitting, setErrors }) => {
                 const unanswered = Object.entries(values).filter(([_, value]) => !value);
                 if (unanswered.length > 0) {
-                    // Не все ответы выбраны — показать ошибки
                     const errorObj = Object.fromEntries(
                         unanswered.map(([key]) => [key, 'Выберите один из вариантов'])
                     );
@@ -56,70 +64,94 @@ export default function QuizForm({ quiz }: { quiz: Quiz }) {
                     return;
                 }
 
-                // Проверка правильности ответов
                 const incorrect = questions.filter((q) => values[q.name] !== q.correctAnswer);
-                if (incorrect.length > 0) {
-                    const errorObj = Object.fromEntries(
-                        incorrect.map((q) => [q.name, 'Неверный ответ'])
-                    );
-                    setErrors(errorObj);
-                } else {
+                const errorObj = Object.fromEntries(
+                    incorrect.map((q) => [q.name, 'Неверный ответ'])
+                );
+                setErrors(errorObj);
+
+                // Показать объяснение ко всем вопросам
+                const explanations = Object.fromEntries(
+                    questions.map((q) => [q.name, true])
+                );
+                setShowExplanations(explanations);
+                setHasSubmitted(true);
+
+                if (incorrect.length === 0) {
                     alert('Поздравляем! Все ответы верны.');
                 }
 
                 setSubmitting(false);
             }}
         >
-            {({ isSubmitting }) => (
+            {({ isSubmitting, values }) => (
                 <Form>
                     <VStack spacing={6} align="stretch">
-                        {questions.map(({ name, question, options }) => (
-                            <Field name={name} key={name}>
-                                {({ field, form }: FieldProps) => (
-                                    <FormControl
-                                        isInvalid={!!form.errors[name] && !!form.touched[name]}
-                                        as="fieldset"
-                                    >
-                                        <FormLabel as="legend" fontWeight="bold">
-                                            {question}
-                                        </FormLabel>
-                                        <RadioGroup
-                                            onChange={(val: string) => {
-                                                form.setFieldValue(name, val);
-                                                form.setFieldTouched(name, true);
-                                                if (form.errors[name]) {
-                                                    form.setFieldError(name, undefined);
-                                                }
-                                            }}
-                                            value={field.value}
+                        {questions.map(({ name, question, options, explanation }) => (
+                            <Box key={name}>
+                                <Field name={name}>
+                                    {({ field, form }: FieldProps) => (
+                                        <FormControl
+                                            isInvalid={!!form.errors[name] && !!form.touched[name]}
+                                            as="fieldset"
                                         >
-                                            <VStack align="start" spacing={2}>
-                                                {options.map(({ label, value }) => (
-                                                    <Radio
-                                                        key={value}
-                                                        value={value}
-                                                        bg="bg"
-                                                        color="white"
-                                                        borderColor="border"
-                                                        _checked={{
-                                                            bg: 'primary',
-                                                            color: 'white',
-                                                            borderColor: 'primary',
-                                                        }}
-                                                    >
-                                                        {label}
-                                                    </Radio>
-                                                ))}
-                                            </VStack>
-                                        </RadioGroup>
-                                        <FormErrorMessage>
-                                            {typeof form.errors[name] === 'string'
-                                                ? form.errors[name]
-                                                : undefined}
-                                        </FormErrorMessage>
-                                    </FormControl>
+                                            <FormLabel as="legend" fontWeight="bold">
+                                                {question}
+                                            </FormLabel>
+                                            <RadioGroup
+                                                onChange={(val: string) => {
+                                                    form.setFieldValue(name, val);
+                                                    form.setFieldTouched(name, true);
+                                                    if (form.errors[name]) {
+                                                        form.setFieldError(name, undefined);
+                                                    }
+                                                }}
+                                                value={field.value}
+                                            >
+                                                <VStack align="start" spacing={2}>
+                                                    {options.map(({ label, value }) => (
+                                                        <Radio
+                                                            key={value}
+                                                            value={value}
+                                                            bg="bg"
+                                                            color="white"
+                                                            borderColor="border"
+                                                            _checked={{
+                                                                bg: 'primary',
+                                                                color: 'white',
+                                                                borderColor: 'primary',
+                                                            }}
+                                                        >
+                                                            {label}
+                                                        </Radio>
+                                                    ))}
+                                                </VStack>
+                                            </RadioGroup>
+                                            <FormErrorMessage>
+                                                {typeof form.errors[name] === 'string'
+                                                    ? form.errors[name]
+                                                    : undefined}
+                                            </FormErrorMessage>
+                                        </FormControl>
+                                    )}
+                                </Field>
+
+                                {hasSubmitted && explanation && (
+                                    <Accordion allowToggle mt={2}>
+                                        <AccordionItem>
+                                            <AccordionButton>
+                                                <Box flex="1" textAlign="left">
+                                                    Объяснение
+                                                </Box>
+                                                <AccordionIcon />
+                                            </AccordionButton>
+                                            <AccordionPanel pb={4} fontSize="sm">
+                                                {explanation}
+                                            </AccordionPanel>
+                                        </AccordionItem>
+                                    </Accordion>
                                 )}
-                            </Field>
+                            </Box>
                         ))}
 
                         <Button
@@ -127,6 +159,7 @@ export default function QuizForm({ quiz }: { quiz: Quiz }) {
                             colorScheme="brand"
                             isLoading={isSubmitting}
                             alignSelf="flex-start"
+                            isDisabled={!Object.values(values).some(Boolean) || isSubmitting}
                         >
                             Проверить ответы
                         </Button>
