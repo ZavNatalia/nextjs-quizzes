@@ -14,7 +14,8 @@ export const quiz = {
                     { label: '/app', value: 'app' },
                 ],
                 correctAnswer: 'app',
-                explanation: 'В Next.js 13+ используется папка `/app` вместо `/pages` для маршрутов и компонентов. Она поддерживает Server Components, layouts, loading/error файлы и другие возможности нового маршрутизатора.',
+                explanation:
+                    'В Next.js 13+ используется папка `/app` вместо `/pages` для маршрутов и компонентов. Она поддерживает Server Components, layouts, loading/error файлы и другие возможности нового маршрутизатора.',
             },
             {
                 name: 'q2',
@@ -27,7 +28,8 @@ export const quiz = {
                     { label: "import React from 'react'", value: 'import-react' },
                 ],
                 correctAnswer: 'use-client',
-                explanation: "В Server Components по умолчанию код исполняется на сервере. Чтобы компонент рендерился на клиенте, нужно явно указать директиву `'use client'` в начале файла.",
+                explanation:
+                    "В Server Components по умолчанию код исполняется на сервере. Чтобы компонент рендерился на клиенте, нужно явно указать директиву `'use client'` в начале файла.",
             },
             {
                 name: 'q3',
@@ -39,7 +41,8 @@ export const quiz = {
                     { label: 'RouterLink', value: 'routerlink' },
                 ],
                 correctAnswer: 'link',
-                explanation: "`Link` из `next/link` — специальный компонент, оборачивающий `<a>`, который обеспечивает client-side переходы и префетчинг страниц.",
+                explanation:
+                    '`Link` из `next/link` — специальный компонент, оборачивающий `<a>`, который обеспечивает client-side переходы и префетчинг страниц.',
             },
             {
                 name: 'q4',
@@ -51,7 +54,8 @@ export const quiz = {
                     { label: 'useHref', value: 'useHref' },
                 ],
                 correctAnswer: 'usePathname',
-                explanation: "`usePathname()` — хук из `next/navigation`, который возвращает текущий путь (pathname) в приложениях, использующих `/app` маршрутизацию.",
+                explanation:
+                    '`usePathname()` — хук из `next/navigation`, который возвращает текущий путь (pathname) в приложениях, использующих `/app` маршрутизацию.',
             },
             {
                 name: 'q5',
@@ -63,7 +67,8 @@ export const quiz = {
                     { label: 'middleware.ts', value: 'middleware' },
                 ],
                 correctAnswer: 'error',
-                explanation: "`error.tsx` в `app/` папке обрабатывает ошибки, происходящие при загрузке маршрута или рендеринге компонента. Это аналог boundary-ошибок.",
+                explanation:
+                    '`error.tsx` в `app/` папке обрабатывает ошибки, происходящие при загрузке маршрута или рендеринге компонента. Это аналог boundary-ошибок.',
             },
         ],
         middle: [
@@ -77,7 +82,8 @@ export const quiz = {
                     { label: 'getPaths', value: 'getPaths' },
                 ],
                 correctAnswer: 'generateStaticParams',
-                explanation: "`generateStaticParams()` используется в `app/`, чтобы указать все возможные параметры маршрута для предварительной генерации страниц на этапе билда.",
+                explanation:
+                    '`generateStaticParams()` используется в `app/`, чтобы указать все возможные параметры маршрута для предварительной генерации страниц на этапе билда.',
             },
             {
                 name: 'q7',
@@ -89,7 +95,8 @@ export const quiz = {
                     { label: 'getServerSideProps', value: 'gssp' },
                 ],
                 correctAnswer: 'revalidate',
-                explanation: "`export const revalidate = 60` означает, что страница будет пересоздаваться не чаще одного раза в 60 секунд. Это способ настройки ISR (Incremental Static Regeneration).",
+                explanation:
+                    '`export const revalidate = 60` означает, что страница будет пересоздаваться не чаще одного раза в 60 секунд. Это способ настройки ISR (Incremental Static Regeneration).',
             },
             {
                 name: 'q8',
@@ -101,11 +108,13 @@ export const quiz = {
                     { label: 'next-data-loader', value: 'loader' },
                 ],
                 correctAnswer: 'fetch',
-                explanation: "Компоненты без `'use client'` исполняются на сервере. Можно использовать `fetch()` прямо внутри них, и Next.js автоматически оптимизирует такие вызовы.",
+                explanation:
+                    "Компоненты без `'use client'` исполняются на сервере. Можно использовать `fetch()` прямо внутри них, и Next.js автоматически оптимизирует такие вызовы.",
             },
             {
                 name: 'q9',
-                question: 'Какой модификатор dynamic route позволяет сделать сегмент необязательным?',
+                question:
+                    'Какой модификатор dynamic route позволяет сделать сегмент необязательным?',
                 options: [
                     { label: '[[slug]]', value: 'optional' },
                     { label: '[slug?]', value: 'ts-optional' },
@@ -113,7 +122,8 @@ export const quiz = {
                     { label: '[...slug]', value: 'rest' },
                 ],
                 correctAnswer: 'optional',
-                explanation: "В Next.js `[[slug]]` — это синтаксис для необязательного сегмента маршрута. Если параметр отсутствует, используется дефолтная версия страницы.",
+                explanation:
+                    'В Next.js `[[slug]]` — это синтаксис для необязательного сегмента маршрута. Если параметр отсутствует, используется дефолтная версия страницы.',
             },
             {
                 name: 'q10',
@@ -125,7 +135,8 @@ export const quiz = {
                     { label: 'Рендерит страницу при билде', value: 'ssg' },
                 ],
                 correctAnswer: 'force',
-                explanation: "Флаг `'force-dynamic'` говорит Next.js всегда рендерить страницу на сервере (SSR), игнорируя кеш и статическую генерацию.",
+                explanation:
+                    "Флаг `'force-dynamic'` говорит Next.js всегда рендерить страницу на сервере (SSR), игнорируя кеш и статическую генерацию.",
             },
         ],
         senior: [
@@ -139,7 +150,8 @@ export const quiz = {
                     { label: "fetch(..., { cache: 'no-store' })", value: 'no-store' },
                 ],
                 correctAnswer: 'tag',
-                explanation: "`revalidateTag()` используется для ручного сброса кеша по тегу, который можно привязывать к страницам или запросам. Полезно при динамическом контенте.",
+                explanation:
+                    '`revalidateTag()` используется для ручного сброса кеша по тегу, который можно привязывать к страницам или запросам. Полезно при динамическом контенте.',
             },
             {
                 name: 'q12',
@@ -151,11 +163,13 @@ export const quiz = {
                     { label: 'Оборачивать в _app.tsx', value: '_app' },
                 ],
                 correctAnswer: 'shared',
-                explanation: "В `app/` можно создать `layout.tsx` в корне маршрута, и он будет использоваться всеми вложенными маршрутами — это поведение по умолчанию.",
+                explanation:
+                    'В `app/` можно создать `layout.tsx` в корне маршрута, и он будет использоваться всеми вложенными маршрутами — это поведение по умолчанию.',
             },
             {
                 name: 'q13',
-                question: 'Какой способ использовать для условной маршрутизации на уровне сегментов?',
+                question:
+                    'Какой способ использовать для условной маршрутизации на уровне сегментов?',
                 options: [
                     { label: 'Middleware', value: 'middleware' },
                     { label: 'Catch-all маршруты', value: 'catch' },
@@ -163,7 +177,8 @@ export const quiz = {
                     { label: 'Segment config', value: 'segment' },
                 ],
                 correctAnswer: 'middleware',
-                explanation: "Middleware позволяет обрабатывать запросы до рендера страницы, включая условную маршрутизацию, редиректы, защиту маршрутов и т.д.",
+                explanation:
+                    'Middleware позволяет обрабатывать запросы до рендера страницы, включая условную маршрутизацию, редиректы, защиту маршрутов и т.д.',
             },
             {
                 name: 'q14',
@@ -175,7 +190,8 @@ export const quiz = {
                     { label: 'Ререндерит компонент', value: 'rerender' },
                 ],
                 correctAnswer: 'no-store',
-                explanation: "`fetchCache = 'force-no-store'` отключает кеширование всех fetch-запросов на этой странице. Используется для динамического контента.",
+                explanation:
+                    "`fetchCache = 'force-no-store'` отключает кеширование всех fetch-запросов на этой странице. Используется для динамического контента.",
             },
             {
                 name: 'q15',
@@ -187,8 +203,9 @@ export const quiz = {
                     { label: 'Создать файл error-boundary.ts', value: 'boundary' },
                 ],
                 correctAnswer: 'error',
-                explanation: "`error.tsx` в Next.js — это error boundary для маршрута. Он ловит ошибки рендера или загрузки и отображает fallback интерфейс.",
+                explanation:
+                    '`error.tsx` в Next.js — это error boundary для маршрута. Он ловит ошибки рендера или загрузки и отображает fallback интерфейс.',
             },
         ],
     },
-}
+};

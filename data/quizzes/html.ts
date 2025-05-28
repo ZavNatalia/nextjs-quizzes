@@ -13,11 +13,13 @@ export const quiz = {
                     { label: '<section>', value: 'section' },
                 ],
                 correctAnswer: 'main',
-                explanation: 'Тег <main> семантически указывает на основное содержание документа, исключая навигацию, боковые панели и футеры.'
+                explanation:
+                    'Тег <main> семантически указывает на основное содержание документа, исключая навигацию, боковые панели и футеры.',
             },
             {
                 name: 'q2',
-                question: 'Какой атрибут используется для доступности (a11y), чтобы описать элемент?',
+                question:
+                    'Какой атрибут используется для доступности (a11y), чтобы описать элемент?',
                 options: [
                     { label: 'title', value: 'title' },
                     { label: 'aria-label', value: 'aria-label' },
@@ -25,7 +27,8 @@ export const quiz = {
                     { label: 'alt', value: 'alt' },
                 ],
                 correctAnswer: 'aria-label',
-                explanation: 'Атрибут aria-label предоставляет описание элемента для экранных читалок, улучшая доступность.'
+                explanation:
+                    'Атрибут aria-label предоставляет описание элемента для экранных читалок, улучшая доступность.',
             },
             {
                 name: 'q3',
@@ -37,7 +40,8 @@ export const quiz = {
                     { label: 'Добавляет подсказки', value: 'hint' },
                 ],
                 correctAnswer: 'on',
-                explanation: 'Атрибут autocomplete включает автозаполнение браузером ранее введённых значений в форму.'
+                explanation:
+                    'Атрибут autocomplete включает автозаполнение браузером ранее введённых значений в форму.',
             },
             {
                 name: 'q4',
@@ -49,7 +53,8 @@ export const quiz = {
                     { label: 'Зависит от браузера', value: 'browser' },
                 ],
                 correctAnswer: 'yes',
-                explanation: '<article> может содержать <section>, если они логически связаны. Это допустимо и соответствует семантике HTML5.'
+                explanation:
+                    '<article> может содержать <section>, если они логически связаны. Это допустимо и соответствует семантике HTML5.',
             },
             {
                 name: 'q5',
@@ -61,7 +66,7 @@ export const quiz = {
                     { label: '<image>', value: 'image' },
                 ],
                 correctAnswer: 'svg',
-                explanation: 'Тег <svg> позволяет вставлять векторную графику в HTML-документ.'
+                explanation: 'Тег <svg> позволяет вставлять векторную графику в HTML-документ.',
             },
         ],
         middle: [
@@ -75,11 +80,13 @@ export const quiz = {
                     { label: 'method', value: 'method' },
                 ],
                 correctAnswer: 'action',
-                explanation: 'Атрибут action указывает, на какой URL будут отправлены данные формы при её отправке.'
+                explanation:
+                    'Атрибут action указывает, на какой URL будут отправлены данные формы при её отправке.',
             },
             {
                 name: 'q7',
-                question: 'Какой тег используется для группировки логически связанных элементов формы?',
+                question:
+                    'Какой тег используется для группировки логически связанных элементов формы?',
                 options: [
                     { label: '<formgroup>', value: 'formgroup' },
                     { label: '<labelset>', value: 'labelset' },
@@ -87,11 +94,13 @@ export const quiz = {
                     { label: '<fieldset>', value: 'fieldset' },
                 ],
                 correctAnswer: 'fieldset',
-                explanation: 'Тег <fieldset> группирует элементы формы и может использоваться с <legend> для описания группы.'
+                explanation:
+                    'Тег <fieldset> группирует элементы формы и может использоваться с <legend> для описания группы.',
             },
             {
                 name: 'q8',
-                question: 'Какой элемент помогает браузеру адаптировать страницу под размер экрана?',
+                question:
+                    'Какой элемент помогает браузеру адаптировать страницу под размер экрана?',
                 options: [
                     { label: '<meta name="viewport">', value: 'viewport' },
                     { label: '<meta charset="utf-8">', value: 'charset' },
@@ -99,7 +108,8 @@ export const quiz = {
                     { label: '<device>', value: 'device' },
                 ],
                 correctAnswer: 'viewport',
-                explanation: '<meta name="viewport"> позволяет устанавливать ширину и масштаб страницы в зависимости от устройства.'
+                explanation:
+                    '<meta name="viewport"> позволяет устанавливать ширину и масштаб страницы в зависимости от устройства.',
             },
             {
                 name: 'q9',
@@ -111,7 +121,8 @@ export const quiz = {
                     { label: 'empty', value: 'empty' },
                 ],
                 correctAnswer: 'required',
-                explanation: 'Атрибут required делает поле обязательным для заполнения перед отправкой формы.'
+                explanation:
+                    'Атрибут required делает поле обязательным для заполнения перед отправкой формы.',
             },
             {
                 name: 'q10',
@@ -123,7 +134,8 @@ export const quiz = {
                     { label: 'Определяет внешний шаблон', value: 'external' },
                 ],
                 correctAnswer: 'hidden',
-                explanation: 'Тег <template> содержит неактивный HTML, который может быть вставлен в документ через JavaScript.'
+                explanation:
+                    'Тег <template> содержит неактивный HTML, который может быть вставлен в документ через JavaScript.',
             },
         ],
         senior: [
@@ -137,7 +149,8 @@ export const quiz = {
                     { label: 'Он будет сбрасывать форму', value: 'reset' },
                 ],
                 correctAnswer: 'submit',
-                explanation: 'По умолчанию кнопка <button> имеет type="submit", если не указано иное.'
+                explanation:
+                    'По умолчанию кнопка <button> имеет type="submit", если не указано иное.',
             },
             {
                 name: 'q12',
@@ -149,7 +162,8 @@ export const quiz = {
                     { label: 'shortcut', value: 'shortcut' },
                 ],
                 correctAnswer: 'tabindex',
-                explanation: 'Атрибут tabindex управляет порядком навигации по элементам с клавиатуры.'
+                explanation:
+                    'Атрибут tabindex управляет порядком навигации по элементам с клавиатуры.',
             },
             {
                 name: 'q13',
@@ -161,11 +175,13 @@ export const quiz = {
                     { label: '<link rel="stylesheet">', value: 'link' },
                 ],
                 correctAnswer: 'link',
-                explanation: 'Тег <link rel="stylesheet"> не влияет на содержание страницы, а только подключает стили.'
+                explanation:
+                    'Тег <link rel="stylesheet"> не влияет на содержание страницы, а только подключает стили.',
             },
             {
                 name: 'q14',
-                question: 'Какая ошибка в HTML ухудшает доступность для пользователей с нарушениями зрения?',
+                question:
+                    'Какая ошибка в HTML ухудшает доступность для пользователей с нарушениями зрения?',
                 options: [
                     { label: 'Отсутствие class', value: 'class' },
                     { label: 'Добавление tabindex всем элементам', value: 'tabindex' },
@@ -173,7 +189,8 @@ export const quiz = {
                     { label: 'Использование <main> вместо <div>', value: 'main' },
                 ],
                 correctAnswer: 'alt',
-                explanation: 'Отсутствие alt у <img> делает изображения недоступными для экранных читалок.'
+                explanation:
+                    'Отсутствие alt у <img> делает изображения недоступными для экранных читалок.',
             },
             {
                 name: 'q15',
@@ -185,7 +202,8 @@ export const quiz = {
                     { label: 'Только внутри iframe', value: 'iframe' },
                 ],
                 correctAnswer: 'yes',
-                explanation: 'HTML позволяет несколько <main>, но только если они изолированы, например, в компонентах или шаблонах.'
+                explanation:
+                    'HTML позволяет несколько <main>, но только если они изолированы, например, в компонентах или шаблонах.',
             },
         ],
     },

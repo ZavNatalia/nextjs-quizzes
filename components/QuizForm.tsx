@@ -18,6 +18,7 @@ import {
     RadioGroup,
     VStack,
     Box,
+    useToast,
 } from '@chakra-ui/react';
 
 interface QuizQuestion {
@@ -36,6 +37,7 @@ interface Quiz {
 
 export default function QuizForm({ quiz }: { quiz: Quiz }) {
     const { questions } = quiz;
+    const toast = useToast();
     const initialValues = Object.fromEntries(questions.map((q) => [q.name, '']));
 
     const validationSchema = Yup.object(
@@ -44,7 +46,6 @@ export default function QuizForm({ quiz }: { quiz: Quiz }) {
         )
     );
 
-    const [showExplanations, setShowExplanations] = useState<Record<string, boolean>>({});
     const [hasSubmitted, setHasSubmitted] = useState(false);
 
     return (
@@ -54,7 +55,7 @@ export default function QuizForm({ quiz }: { quiz: Quiz }) {
             validateOnChange={false}
             validateOnBlur={false}
             onSubmit={(values, { setSubmitting, setErrors }) => {
-                const unanswered = Object.entries(values).filter(([_, value]) => !value);
+                const unanswered = Object.entries(values).filter(([, value]) => !value);
                 if (unanswered.length > 0) {
                     const errorObj = Object.fromEntries(
                         unanswered.map(([key]) => [key, 'Выберите один из вариантов'])
@@ -70,15 +71,16 @@ export default function QuizForm({ quiz }: { quiz: Quiz }) {
                 );
                 setErrors(errorObj);
 
-                // Показать объяснение ко всем вопросам
-                const explanations = Object.fromEntries(
-                    questions.map((q) => [q.name, true])
-                );
-                setShowExplanations(explanations);
                 setHasSubmitted(true);
 
                 if (incorrect.length === 0) {
-                    alert('Поздравляем! Все ответы верны.');
+                    toast({
+                        title: 'Поздравляем!',
+                        description: 'Все ответы верны 🎉',
+                        status: 'success',
+                        duration: 5000,
+                        isClosable: true,
+                    });
                 }
 
                 setSubmitting(false);
