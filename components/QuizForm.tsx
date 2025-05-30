@@ -20,6 +20,8 @@ import {
     Box,
     useToast,
 } from '@chakra-ui/react';
+import { useDispatch } from 'react-redux';
+import { markQuizAsCompleted } from '@/store/quizProgressSlice';
 
 interface QuizQuestion {
     name: string;
@@ -35,9 +37,17 @@ interface Quiz {
     questions: QuizQuestion[];
 }
 
-export default function QuizForm({ quiz }: { quiz: Quiz }) {
+export default function QuizForm({
+    quiz,
+    level,
+}: {
+    quiz: Quiz;
+    level: 'junior' | 'middle' | 'senior';
+}) {
     const { questions } = quiz;
     const toast = useToast();
+    const dispatch = useDispatch();
+
     const initialValues = Object.fromEntries(questions.map((q) => [q.name, '']));
 
     const validationSchema = Yup.object(
@@ -55,35 +65,40 @@ export default function QuizForm({ quiz }: { quiz: Quiz }) {
             validateOnChange={false}
             validateOnBlur={false}
             onSubmit={(values, { setSubmitting, setErrors }) => {
-                const unanswered = Object.entries(values).filter(([, value]) => !value);
-                if (unanswered.length > 0) {
+                try {
+                    const unanswered = Object.entries(values).filter(([, value]) => !value);
+                    if (unanswered.length > 0) {
+                        const errorObj = Object.fromEntries(
+                            unanswered.map(([key]) => [key, 'Выберите один из вариантов'])
+                        );
+                        setErrors(errorObj);
+                        setSubmitting(false);
+                        return;
+                    }
+
+                    const incorrect = questions.filter((q) => values[q.name] !== q.correctAnswer);
                     const errorObj = Object.fromEntries(
-                        unanswered.map(([key]) => [key, 'Выберите один из вариантов'])
+                        incorrect.map((q) => [q.name, 'Неверный ответ'])
                     );
                     setErrors(errorObj);
+
+                    if (incorrect.length === 0) {
+                        dispatch(markQuizAsCompleted({ slug: quiz.slug, level }));
+                        toast({
+                            title: 'Поздравляем!',
+                            description: 'Все ответы верны 🎉',
+                            status: 'success',
+                            duration: 5000,
+                            isClosable: true,
+                        });
+                    }
+
+                    setHasSubmitted(true);
+                } catch (e) {
+                    console.error('Ошибка:', e);
+                } finally {
                     setSubmitting(false);
-                    return;
                 }
-
-                const incorrect = questions.filter((q) => values[q.name] !== q.correctAnswer);
-                const errorObj = Object.fromEntries(
-                    incorrect.map((q) => [q.name, 'Неверный ответ'])
-                );
-                setErrors(errorObj);
-
-                setHasSubmitted(true);
-
-                if (incorrect.length === 0) {
-                    toast({
-                        title: 'Поздравляем!',
-                        description: 'Все ответы верны 🎉',
-                        status: 'success',
-                        duration: 5000,
-                        isClosable: true,
-                    });
-                }
-
-                setSubmitting(false);
             }}
         >
             {({ isSubmitting, values }) => (

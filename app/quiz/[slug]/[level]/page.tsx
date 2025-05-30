@@ -41,7 +41,10 @@ export default async function QuizPage({
                     {quiz.title}
                 </Heading>
 
-                <QuizForm quiz={{ slug: quiz.slug, title: quiz.title, questions }} />
+                <QuizForm
+                    quiz={{ slug: quiz.slug, title: quiz.title, questions }}
+                    level={level as 'junior' | 'middle' | 'senior'}
+                />
             </Box>
         </Container>
     );
