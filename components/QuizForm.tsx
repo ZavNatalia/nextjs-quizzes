@@ -159,7 +159,7 @@ export default function QuizForm({
                                     <Accordion allowToggle mt={2}>
                                         <AccordionItem>
                                             <AccordionButton>
-                                                <Box flex="1" textAlign="left" fontStyle='italic'>
+                                                <Box flex="1" textAlign="left" fontStyle="italic">
                                                     Объяснение
                                                 </Box>
                                                 <AccordionIcon />

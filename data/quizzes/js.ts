@@ -10,12 +10,12 @@ export const quiz = {
                     { label: 'undefined', value: 'undefined' },
                     { label: 'true', value: 'true' },
                     { label: 'TypeError', value: 'typeerror' },
-                    { label: 'false', value: 'false' }
+                    { label: 'false', value: 'false' },
                 ],
                 correctAnswer: 'true',
                 explanation:
                     'Сначала `[] + {}` конкатенируется: пустой массив превращается в пустую строку, ' +
-                    'объект — в `"[object Object]"`. Сравниваются две одинаковые строки, поэтому результат `true`.'
+                    'объект — в `"[object Object]"`. Сравниваются две одинаковые строки, поэтому результат `true`.',
             },
             {
                 name: 'q2',
@@ -24,11 +24,11 @@ export const quiz = {
                     { label: 'true', value: 'true' },
                     { label: 'false', value: 'false' },
                     { label: 'undefined', value: 'undefined' },
-                    { label: 'null', value: 'null' }
+                    { label: 'null', value: 'null' },
                 ],
                 correctAnswer: 'false',
                 explanation:
-                    '`NaN` по стандарту не равно ничему, включая само себя, поэтому строгое сравнение даёт `false`.'
+                    '`NaN` по стандарту не равно ничему, включая само себя, поэтому строгое сравнение даёт `false`.',
             },
             {
                 name: 'q3',
@@ -37,11 +37,11 @@ export const quiz = {
                     { label: 'var — имеет функциональную область видимости', value: 'scope' },
                     { label: 'let — глобальная переменная', value: 'global' },
                     { label: 'var — создаёт замыкание', value: 'closure' },
-                    { label: 'let — не может быть переопределён', value: 'override' }
+                    { label: 'let — не может быть переопределён', value: 'override' },
                 ],
                 correctAnswer: 'scope',
                 explanation:
-                    '`var` виден во всей функции (function-scope), а `let` ограничен блоком `{ ... }`.'
+                    '`var` виден во всей функции (function-scope), а `let` ограничен блоком `{ ... }`.',
             },
             {
                 name: 'q4',
@@ -50,7 +50,7 @@ export const quiz = {
                     { label: 'Удаляет свойство', value: 'delete' },
                     { label: 'Аналог try/catch', value: 'trycatch' },
                     { label: 'Безопасный доступ к вложенным свойствам', value: 'safe' },
-                    { label: 'Только для объектов', value: 'objects' }
+                    { label: 'Только для объектов', value: 'objects' },
                 ],
                 correctAnswer: 'safe',
                 explanation:
@@ -63,13 +63,13 @@ export const quiz = {
                     { label: 'Запрещает изменение объекта', value: 'freeze' },
                     { label: 'Удаляет свойства', value: 'delete' },
                     { label: 'Добавляет методы', value: 'add' },
-                    { label: 'Создаёт копию', value: 'clone' }
+                    { label: 'Создаёт копию', value: 'clone' },
                 ],
                 correctAnswer: 'freeze',
                 explanation:
                     'Метод помечает свойства как неперезаписываемые/неконфигурируемые. ' +
-                    'Однако вложенные объекты остаются изменяемыми, если их не заморозить отдельно.'
-            }
+                    'Однако вложенные объекты остаются изменяемыми, если их не заморозить отдельно.',
+            },
         ],
         middle: [
             {
@@ -79,12 +79,12 @@ export const quiz = {
                     { label: 'Навсегда привязывает `this`', value: 'bind' },
                     { label: 'Создаёт замыкание', value: 'closure' },
                     { label: 'Вызывает функцию немедленно', value: 'call' },
-                    { label: 'Изменяет прототип', value: 'proto' }
+                    { label: 'Изменяет прототип', value: 'proto' },
                 ],
                 correctAnswer: 'bind',
                 explanation:
                     '`bind` возвращает новую функцию с закреплённым `this` и (опционально) частично ' +
-                    'подставленными аргументами; сама исходная функция не вызывается.'
+                    'подставленными аргументами; сама исходная функция не вызывается.',
             },
             {
                 name: 'q2',
@@ -93,11 +93,11 @@ export const quiz = {
                     { label: 'Пустой объект с `__proto__`', value: 'default' },
                     { label: 'Массив', value: 'array' },
                     { label: 'Ошибка', value: 'error' },
-                    { label: 'Объект без прототипа', value: 'no_proto' }
+                    { label: 'Объект без прототипа', value: 'no_proto' },
                 ],
                 correctAnswer: 'no_proto',
                 explanation:
-                    'Такой объект не наследует `Object.prototype`, поэтому у него нет, например, `toString` или `hasOwnProperty`.'
+                    'Такой объект не наследует `Object.prototype`, поэтому у него нет, например, `toString` или `hasOwnProperty`.',
             },
             {
                 name: 'q3',
@@ -106,11 +106,11 @@ export const quiz = {
                     { label: '`===` проверяет значение и тип без преобразования', value: 'strict' },
                     { label: '`==` выполняет строгое сравнение', value: 'strict2' },
                     { label: '`===` преобразует типы', value: 'coerce' },
-                    { label: '`==` используется только с числами', value: 'numbersOnly' }
+                    { label: '`==` используется только с числами', value: 'numbersOnly' },
                 ],
                 correctAnswer: 'strict',
                 explanation:
-                    '`==` делает неявное приведение типов (coercion). `===` этого не делает и сравнивает как есть.'
+                    '`==` делает неявное приведение типов (coercion). `===` этого не делает и сравнивает как есть.',
             },
             {
                 name: 'q4',
@@ -119,11 +119,11 @@ export const quiz = {
                     { label: '`symbol`', value: 'symbol' },
                     { label: '`object`', value: 'object' },
                     { label: '`function`', value: 'function' },
-                    { label: '`string`', value: 'string' }
+                    { label: '`string`', value: 'string' },
                 ],
                 correctAnswer: 'symbol',
                 explanation:
-                    'Конструктор `Symbol()` возвращает уникальное значение одноимённого примитивного типа.'
+                    'Конструктор `Symbol()` возвращает уникальное значение одноимённого примитивного типа.',
             },
             {
                 name: 'q5',
@@ -132,12 +132,12 @@ export const quiz = {
                     { label: 'reverse', value: 'reverse' },
                     { label: 'filter', value: 'filter' },
                     { label: 'push', value: 'push' },
-                    { label: 'splice', value: 'splice' }
+                    { label: 'splice', value: 'splice' },
                 ],
                 correctAnswer: 'filter',
                 explanation:
-                    '`filter` создаёт новый массив; остальные перечисленные методы мутируют оригинал.'
-            }
+                    '`filter` создаёт новый массив; остальные перечисленные методы мутируют оригинал.',
+            },
         ],
         senior: [
             {
@@ -147,12 +147,12 @@ export const quiz = {
                     { label: 'Проверяет тип', value: 'check' },
                     { label: 'Возвращает `undefined`', value: 'undefined' },
                     { label: 'Создаёт область видимости', value: 'scope' },
-                    { label: 'Удаляет переменную', value: 'delete' }
+                    { label: 'Удаляет переменную', value: 'delete' },
                 ],
                 correctAnswer: 'undefined',
                 explanation:
                     '`void expression` вычисляет выражение и всегда возвращает `undefined`. ' +
-                    'Часто используется в ссылках: `href="javascript:void 0"`, чтобы не переходить по адресу.'
+                    'Часто используется в ссылках: `href="javascript:void 0"`, чтобы не переходить по адресу.',
             },
             {
                 name: 'q2',
@@ -161,11 +161,11 @@ export const quiz = {
                     { label: 'Сначала `setInterval`', value: 'interval' },
                     { label: 'Сначала микротаски, потом макротаски', value: 'micro_macro' },
                     { label: 'Синхронный код в конце', value: 'sync_first' },
-                    { label: 'Произвольно', value: 'queue' }
+                    { label: 'Произвольно', value: 'queue' },
                 ],
                 correctAnswer: 'micro_macro',
                 explanation:
-                    'После синхронного стека выполняются **микротаски** (Promises, queueMicrotask), затем **макротаски** (setTimeout, I/O).'
+                    'После синхронного стека выполняются **микротаски** (Promises, queueMicrotask), затем **макротаски** (setTimeout, I/O).',
             },
             {
                 name: 'q3',
@@ -174,11 +174,11 @@ export const quiz = {
                     { label: 'true', value: 'true' },
                     { label: 'TypeError', value: 'typeerror' },
                     { label: 'undefined', value: 'undefined' },
-                    { label: 'false', value: 'false' }
+                    { label: 'false', value: 'false' },
                 ],
                 correctAnswer: 'true',
                 explanation:
-                    '`Object.is` считает `NaN` эквивалентным самому себе (в отличие от `===`).'
+                    '`Object.is` считает `NaN` эквивалентным самому себе (в отличие от `===`).',
             },
             {
                 name: 'q4',
@@ -187,11 +187,11 @@ export const quiz = {
                     { label: 'Промис выполнится', value: 'done' },
                     { label: 'Результат 42', value: '42' },
                     { label: 'undefined', value: 'undef' },
-                    { label: 'Отклонённый промис с 42', value: 'error' }
+                    { label: 'Отклонённый промис с 42', value: 'error' },
                 ],
                 correctAnswer: 'error',
                 explanation:
-                    'Брошенное значение превращает цепочку в **rejected Promise** с этим значением (`42`).'
+                    'Брошенное значение превращает цепочку в **rejected Promise** с этим значением (`42`).',
             },
             {
                 name: 'q5',
@@ -200,12 +200,12 @@ export const quiz = {
                     { label: 'Перехватывать операции над объектом', value: 'trap' },
                     { label: 'Удалять методы', value: 'remove' },
                     { label: 'Шифровать объект', value: 'encrypt' },
-                    { label: 'Клонировать объект', value: 'clone' }
+                    { label: 'Клонировать объект', value: 'clone' },
                 ],
                 correctAnswer: 'trap',
                 explanation:
-                    '`Proxy` позволяет определить «ловушки» (`traps`) для операций чтения, записи, вызова и др., переопределяя стандартное поведение объектов.'
-            }
-        ]
-    }
+                    '`Proxy` позволяет определить «ловушки» (`traps`) для операций чтения, записи, вызова и др., переопределяя стандартное поведение объектов.',
+            },
+        ],
+    },
 };
