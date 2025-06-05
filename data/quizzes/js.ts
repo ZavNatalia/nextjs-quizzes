@@ -5,29 +5,30 @@ export const quiz = {
         junior: [
             {
                 name: 'q1',
-                question: "Что выведет `[] + {} == '[object Object]'`?",
+                question: 'Что вернёт выражение `[] + {} == "[object Object]"`?',
                 options: [
                     { label: 'undefined', value: 'undefined' },
                     { label: 'true', value: 'true' },
                     { label: 'TypeError', value: 'typeerror' },
-                    { label: 'false', value: 'false' },
+                    { label: 'false', value: 'false' }
                 ],
                 correctAnswer: 'true',
                 explanation:
-                    '[] + {} приводит к сложению строки и объекта: [] преобразуется в пустую строку, {} — в "[object Object]". Получается строка "[object Object]", которая равна себе.',
+                    'Сначала `[] + {}` конкатенируется: пустой массив превращается в пустую строку, ' +
+                    'объект — в `"[object Object]"`. Сравниваются две одинаковые строки, поэтому результат `true`.'
             },
             {
                 name: 'q2',
-                question: 'Что произойдёт при сравнении `NaN === NaN`?',
+                question: 'Что вернёт `NaN === NaN`?',
                 options: [
                     { label: 'true', value: 'true' },
                     { label: 'false', value: 'false' },
                     { label: 'undefined', value: 'undefined' },
-                    { label: 'null', value: 'null' },
+                    { label: 'null', value: 'null' }
                 ],
                 correctAnswer: 'false',
                 explanation:
-                    'По спецификации `NaN` не равен ничему, даже самому себе. Поэтому `NaN === NaN` возвращает `false`.',
+                    '`NaN` по стандарту не равно ничему, включая само себя, поэтому строгое сравнение даёт `false`.'
             },
             {
                 name: 'q3',
@@ -36,20 +37,20 @@ export const quiz = {
                     { label: 'var — имеет функциональную область видимости', value: 'scope' },
                     { label: 'let — глобальная переменная', value: 'global' },
                     { label: 'var — создаёт замыкание', value: 'closure' },
-                    { label: 'let — не может быть переопределён', value: 'override' },
+                    { label: 'let — не может быть переопределён', value: 'override' }
                 ],
                 correctAnswer: 'scope',
                 explanation:
-                    '`var` ограничен функцией, в которой объявлен, а `let` — блоком (например, if, for). Это позволяет избежать утечек переменных и конфликтов.',
+                    '`var` виден во всей функции (function-scope), а `let` ограничен блоком `{ ... }`.'
             },
             {
                 name: 'q4',
-                question: 'Как работает оператор `?.`?',
+                question: 'Как работает оператор опциональной цепочки `?.`?',
                 options: [
                     { label: 'Удаляет свойство', value: 'delete' },
                     { label: 'Аналог try/catch', value: 'trycatch' },
                     { label: 'Безопасный доступ к вложенным свойствам', value: 'safe' },
-                    { label: 'Только для объектов', value: 'objects' },
+                    { label: 'Только для объектов', value: 'objects' }
                 ],
                 correctAnswer: 'safe',
                 explanation:
@@ -62,146 +63,149 @@ export const quiz = {
                     { label: 'Запрещает изменение объекта', value: 'freeze' },
                     { label: 'Удаляет свойства', value: 'delete' },
                     { label: 'Добавляет методы', value: 'add' },
-                    { label: 'Создаёт копию', value: 'clone' },
+                    { label: 'Создаёт копию', value: 'clone' }
                 ],
                 correctAnswer: 'freeze',
                 explanation:
-                    '`Object.freeze()` делает объект неизменяемым: нельзя добавлять, удалять или изменять его свойства. Но вложенные объекты при этом не замораживаются.',
-            },
+                    'Метод помечает свойства как неперезаписываемые/неконфигурируемые. ' +
+                    'Однако вложенные объекты остаются изменяемыми, если их не заморозить отдельно.'
+            }
         ],
         middle: [
             {
                 name: 'q1',
-                question: 'Что делает метод `bind` у функции?',
+                question: 'Что делает метод `Function.prototype.bind`?',
                 options: [
                     { label: 'Навсегда привязывает `this`', value: 'bind' },
-                    { label: 'Создает замыкание', value: 'closure' },
+                    { label: 'Создаёт замыкание', value: 'closure' },
                     { label: 'Вызывает функцию немедленно', value: 'call' },
-                    { label: 'Изменяет прототип', value: 'proto' },
+                    { label: 'Изменяет прототип', value: 'proto' }
                 ],
                 correctAnswer: 'bind',
                 explanation:
-                    '`bind` возвращает новую функцию с привязанным значением `this`, не вызывая её немедленно. Полезно для передачи метода без потери контекста.',
+                    '`bind` возвращает новую функцию с закреплённым `this` и (опционально) частично ' +
+                    'подставленными аргументами; сама исходная функция не вызывается.'
             },
             {
                 name: 'q2',
-                question: 'Что произойдет при использовании `Object.create(null)`?',
+                question: 'Что создаёт `Object.create(null)`?',
                 options: [
-                    { label: 'Создается пустой объект с `__proto__`', value: 'default' },
-                    { label: 'Создается массив', value: 'array' },
-                    { label: 'Выбросится ошибка', value: 'error' },
-                    { label: 'Создается объект без прототипа', value: 'no_proto' },
+                    { label: 'Пустой объект с `__proto__`', value: 'default' },
+                    { label: 'Массив', value: 'array' },
+                    { label: 'Ошибка', value: 'error' },
+                    { label: 'Объект без прототипа', value: 'no_proto' }
                 ],
                 correctAnswer: 'no_proto',
                 explanation:
-                    'Такой объект не наследует от `Object.prototype`. Это удобно, когда не нужны лишние свойства (например, `toString`) — часто используется для мап.',
+                    'Такой объект не наследует `Object.prototype`, поэтому у него нет, например, `toString` или `hasOwnProperty`.'
             },
             {
                 name: 'q3',
-                question: 'В чём основное отличие между операторами `==` и `===` в JavaScript?',
+                question: 'Главное отличие `==` и `===`?',
                 options: [
                     { label: '`===` проверяет значение и тип без преобразования', value: 'strict' },
                     { label: '`==` выполняет строгое сравнение', value: 'strict2' },
-                    { label: '`===` преобразует типы перед сравнением', value: 'coerce' },
-                    { label: '`==` используется только с числами', value: 'numbersOnly' },
+                    { label: '`===` преобразует типы', value: 'coerce' },
+                    { label: '`==` используется только с числами', value: 'numbersOnly' }
                 ],
                 correctAnswer: 'strict',
                 explanation:
-                    '`===` проверяет и тип, и значение, а `==` выполняет неявное преобразование типов (type coercion). Поэтому `===` предпочтительнее в большинстве случаев.',
+                    '`==` делает неявное приведение типов (coercion). `===` этого не делает и сравнивает как есть.'
             },
             {
                 name: 'q4',
-                question: 'Что произойдет при `typeof Symbol()`?',
+                question: 'Каков результат `typeof Symbol()`?',
                 options: [
                     { label: '`symbol`', value: 'symbol' },
                     { label: '`object`', value: 'object' },
                     { label: '`function`', value: 'function' },
-                    { label: '`string`', value: 'string' },
+                    { label: '`string`', value: 'string' }
                 ],
                 correctAnswer: 'symbol',
                 explanation:
-                    '`Symbol()` возвращает уникальное значение специального типа — "symbol". Оно не сравнимо с другими символами и часто используется как ключ в объектах.',
+                    'Конструктор `Symbol()` возвращает уникальное значение одноимённого примитивного типа.'
             },
             {
                 name: 'q5',
-                question: 'Какой метод массива не мутирует оригинальный массив?',
+                question: 'Какой из методов **не изменяет** исходный массив?',
                 options: [
                     { label: 'reverse', value: 'reverse' },
                     { label: 'filter', value: 'filter' },
                     { label: 'push', value: 'push' },
-                    { label: 'splice', value: 'splice' },
+                    { label: 'splice', value: 'splice' }
                 ],
                 correctAnswer: 'filter',
                 explanation:
-                    '`filter` возвращает новый массив, не изменяя исходный. Остальные методы (`reverse`, `push`, `splice`) мутируют (изменяют) оригинальный массив.',
-            },
+                    '`filter` создаёт новый массив; остальные перечисленные методы мутируют оригинал.'
+            }
         ],
         senior: [
             {
                 name: 'q1',
-                question: 'Что делает оператор `void` в JavaScript?',
+                question: 'Назначение оператора `void`?',
                 options: [
                     { label: 'Проверяет тип', value: 'check' },
-                    { label: 'Возвращает undefined', value: 'undefined' },
-                    { label: 'Создает область видимости', value: 'scope' },
-                    { label: 'Удаляет переменную', value: 'delete' },
+                    { label: 'Возвращает `undefined`', value: 'undefined' },
+                    { label: 'Создаёт область видимости', value: 'scope' },
+                    { label: 'Удаляет переменную', value: 'delete' }
                 ],
                 correctAnswer: 'undefined',
                 explanation:
-                    '`void` позволяет вычислить выражение и вернуть `undefined` вне зависимости от его результата. Часто используется для безопасного вызова функций в ссылках (`javascript:void(0)`).',
+                    '`void expression` вычисляет выражение и всегда возвращает `undefined`. ' +
+                    'Часто используется в ссылках: `href="javascript:void 0"`, чтобы не переходить по адресу.'
             },
             {
                 name: 'q2',
-                question: 'Как работает event loop?',
+                question: 'В какой очереди Event Loop обрабатывает задачи?',
                 options: [
-                    { label: 'Обрабатывает setInterval синхронно', value: 'interval' },
+                    { label: 'Сначала `setInterval`', value: 'interval' },
                     { label: 'Сначала микротаски, потом макротаски', value: 'micro_macro' },
-                    { label: 'Запускает синхронный код первым', value: 'sync_first' },
-                    { label: 'Обрабатывает события последовательно', value: 'queue' },
+                    { label: 'Синхронный код в конце', value: 'sync_first' },
+                    { label: 'Произвольно', value: 'queue' }
                 ],
                 correctAnswer: 'micro_macro',
                 explanation:
-                    'Сначала выполняется весь синхронный код, затем микротаски (например, `.then` из промисов), и только потом макротаски (`setTimeout`, `setInterval`).',
+                    'После синхронного стека выполняются **микротаски** (Promises, queueMicrotask), затем **макротаски** (setTimeout, I/O).'
             },
             {
                 name: 'q3',
-                question: 'Какой результат `Object.is(NaN, NaN)`?',
+                question: 'Результат `Object.is(NaN, NaN)`?',
                 options: [
                     { label: 'true', value: 'true' },
                     { label: 'TypeError', value: 'typeerror' },
                     { label: 'undefined', value: 'undefined' },
-                    { label: 'false', value: 'false' },
+                    { label: 'false', value: 'false' }
                 ],
                 correctAnswer: 'true',
                 explanation:
-                    '`Object.is()` — это способ точного сравнения, который учитывает особенности `NaN`. В отличие от `===`, он возвращает `true` для `Object.is(NaN, NaN)`.',
+                    '`Object.is` считает `NaN` эквивалентным самому себе (в отличие от `===`).'
             },
             {
                 name: 'q4',
-                question: 'Что произойдет при `Promise.resolve(10).then(() => { throw 42 })`?',
+                question: 'Что вернёт цепочка `Promise.resolve(10).then(() => { throw 42 })`?',
                 options: [
                     { label: 'Промис выполнится', value: 'done' },
                     { label: 'Результат 42', value: '42' },
-                    { label: 'Будет undefined', value: 'undef' },
-                    { label: 'Ошибка 42', value: 'error' },
+                    { label: 'undefined', value: 'undef' },
+                    { label: 'Отклонённый промис с 42', value: 'error' }
                 ],
                 correctAnswer: 'error',
                 explanation:
-                    'Ошибка, выброшенная в `then`, превращается в отклонённый промис. Поэтому `.then(() => { throw 42 })` вызовет ошибку с этим значением.',
+                    'Брошенное значение превращает цепочку в **rejected Promise** с этим значением (`42`).'
             },
             {
                 name: 'q5',
-                question: 'Как работает `new Proxy()`?',
+                question: 'Главная возможность `new Proxy()`?',
                 options: [
-                    { label: 'Позволяет перехватывать операции с объектом', value: 'trap' },
-                    { label: 'Удаляет методы', value: 'remove' },
-                    { label: 'Шифрует объект', value: 'encrypt' },
-                    { label: 'Создает глубокую копию', value: 'clone' },
+                    { label: 'Перехватывать операции над объектом', value: 'trap' },
+                    { label: 'Удалять методы', value: 'remove' },
+                    { label: 'Шифровать объект', value: 'encrypt' },
+                    { label: 'Клонировать объект', value: 'clone' }
                 ],
                 correctAnswer: 'trap',
                 explanation:
-                    '`Proxy` позволяет перехватывать и изменять поведение операций с объектами: чтение, запись, удаление свойств, вызовы функций и другое. Это мощный инструмент метапрограммирования.',
-            },
-        ],
-    },
+                    '`Proxy` позволяет определить «ловушки» (`traps`) для операций чтения, записи, вызова и др., переопределяя стандартное поведение объектов.'
+            }
+        ]
+    }
 };
