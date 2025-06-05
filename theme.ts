@@ -27,12 +27,28 @@ const theme = extendTheme({
                 default: 'gray.800',
                 _dark: 'gray.100',
             },
+            muted: {
+                default: 'gray.600',
+                _dark: 'gray.400',
+            },
+            contrast: {
+                default: 'white',
+                _dark: 'gray.100',
+            },
             bg: {
                 default: 'white',
                 _dark: 'gray.900',
             },
+            code: {
+                default: 'gray.800',
+                _dark: 'gray.200',
+            },
+            codeBg: {
+                default: 'gray.200',
+                _dark: 'gray.900',
+            },
             subtleBg: {
-                default: 'gray.100',
+                default: 'gray.50',
                 _dark: 'gray.700',
             },
             border: {

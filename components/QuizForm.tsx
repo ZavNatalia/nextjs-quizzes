@@ -22,6 +22,7 @@ import {
 } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { markQuizAsCompleted } from '@/store/quizProgressSlice';
+import Markdown from '@/components/Markdown';
 
 interface QuizQuestion {
     name: string;
@@ -113,7 +114,7 @@ export default function QuizForm({
                                             as="fieldset"
                                         >
                                             <FormLabel as="legend" fontWeight="bold">
-                                                {question}
+                                                <Markdown>{question}</Markdown>
                                             </FormLabel>
                                             <RadioGroup
                                                 onChange={(val: string) => {
@@ -125,7 +126,7 @@ export default function QuizForm({
                                                 }}
                                                 value={field.value}
                                             >
-                                                <VStack align="start" spacing={2}>
+                                                <VStack align="start" spacing={1}>
                                                     {options.map(({ label, value }) => (
                                                         <Radio
                                                             key={value}
@@ -133,13 +134,14 @@ export default function QuizForm({
                                                             bg="bg"
                                                             color="white"
                                                             borderColor="border"
+                                                            ml={3}
                                                             _checked={{
                                                                 bg: 'primary',
                                                                 color: 'white',
                                                                 borderColor: 'primary',
                                                             }}
                                                         >
-                                                            {label}
+                                                            <Markdown>{label}</Markdown>
                                                         </Radio>
                                                     ))}
                                                 </VStack>
@@ -157,13 +159,13 @@ export default function QuizForm({
                                     <Accordion allowToggle mt={2}>
                                         <AccordionItem>
                                             <AccordionButton>
-                                                <Box flex="1" textAlign="left">
+                                                <Box flex="1" textAlign="left" fontStyle='italic'>
                                                     Объяснение
                                                 </Box>
                                                 <AccordionIcon />
                                             </AccordionButton>
                                             <AccordionPanel pb={4} fontSize="sm">
-                                                {explanation}
+                                                <Markdown>{explanation}</Markdown>
                                             </AccordionPanel>
                                         </AccordionItem>
                                     </Accordion>
